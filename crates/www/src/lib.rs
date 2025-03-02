@@ -20,7 +20,7 @@ pub fn App() -> impl IntoView {
         <div class="flex flex-col min-h-screen max-w-4xl mx-auto py-6 px-4">
             <header class="flex items-center justify-between">
                 <h1 class="font-semibold text-xl">
-                    <A class="font-body" href="/">Esteban Borai</A>
+                    <A class="font-body" href="/">Leo Borai</A>
                 </h1>
                 <nav class="text-sm">
                     <ul class="flex items-center space-x-4">
@@ -49,7 +49,7 @@ pub fn App() -> impl IntoView {
                 </Routes>
             </main>
             <footer class="flex items-center justify-center p-4">
-                <small class="font-body">"Made with 🧉 and ❤️ by Esteban Borai © 2017 - 2025"</small>
+                <small class="font-body">"Made with 🧉 and ❤️ by Leo Borai © 2017 - 2025"</small>
             </footer>
         </div>
     }

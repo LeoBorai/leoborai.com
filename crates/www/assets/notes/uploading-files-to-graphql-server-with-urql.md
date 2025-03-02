@@ -184,5 +184,5 @@ always happy to learn and help others!
 [1]: https://www.apollographql.com/blog/graphql/file-uploads/with-apollo-server-2-0/#File-upload-with-schema-param
 [2]: https://formidable.com/open-source/urql/
 [3]: https://formidable.com/open-source/urql/docs/architecture/#the-client-and-exchanges
-[4]: https://github.com/EstebanBorai/manzana
-[5]: https://github.com/EstebanBorai/estebanborai.com
+[4]: https://github.com/LeoBorai/manzana
+[5]: https://github.com/LeoBorai/leoborai.com

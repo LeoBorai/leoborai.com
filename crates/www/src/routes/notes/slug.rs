@@ -79,7 +79,7 @@ pub fn Note() -> impl IntoView {
     view! {
         <Title
             text={move || metadata.get().map(|meta| meta.title).unwrap_or_default()}
-            formatter=|text| format!("{text} — Esteban Borai")
+            formatter=|text| format!("{text} — Leo Borai")
         />
         <section id="note-container" class="pb-10">
             <article id="note-header" class="pb-8">
@@ -111,7 +111,7 @@ pub fn Note() -> impl IntoView {
                     <img src="/assets/images/whoami.jpg" alt="whoami" height="100" width="100" />
                 </figure>
                 <article>
-                    <h1 class="text-lg text-gray-800">"Esteban Borai"</h1>
+                    <h1 class="text-lg text-gray-800">"Leo Borai"</h1>
                     <div class="text-sm space-y-2 text-gray-600">
                         <p>
                             "Hi there! I'm a "<u>"Rust Software Engineer"</u>" with 8 years of experience in Systems and Web Programming using Rust & TypeScript."

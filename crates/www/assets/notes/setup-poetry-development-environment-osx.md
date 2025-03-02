@@ -214,4 +214,4 @@ Have a great time hacking with Python!
 [7]: https://python-poetry.org
 [8]: https://brew.sh/
 [9]: https://chocolatey.org
-[10]: https://github.com/EstebanBorai/estebanborai.com
+[10]: https://github.com/LeoBorai/leoborai.com

@@ -17,7 +17,7 @@ But Windows is getting closer as well, as I get more involved into systems
 programming, I'm also getting into writing Rust crates which must be supported in
 different platforms, such as macOS, Linux and Windows.
 
-Currently I'm working on a crate called [local-ip-address](https://github.com/EstebanBorai/local-ip-address).
+Currently I'm working on a crate called [local-ip-address](https://github.com/LeoBorai/local-ip-address).
 
 The main goal of this crate is to list system's network interfaces along
 with related data such as interface name, interface family (AFINET or AFINET6 for instance),

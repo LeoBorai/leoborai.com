@@ -37,7 +37,7 @@ pub fn Bookshelf() -> impl IntoView {
     view! {
         <Title
             text={move || "Bookshelf"}
-            formatter=|text| format!("{text} — Esteban Borai")
+            formatter=|text| format!("{text} — Leo Borai")
         />
         <div>
             <Section

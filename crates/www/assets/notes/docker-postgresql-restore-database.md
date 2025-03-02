@@ -83,4 +83,4 @@ using the Dockerized environment, make sure your dump files are safe and
 sensitive data free.
 
 If you find any issues with this note, please don't hesitate to open a PR or
-issue in my [GitHub](https://github.com/EstebanBorai/EstebanBorai)!
+issue in my [GitHub](https://github.com/LeoBorai/leoborai.com)!

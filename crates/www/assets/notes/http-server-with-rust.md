@@ -436,9 +436,9 @@ aún no manejan el inglés para que puedan probar el lenguaje de programación R
 [3]: https://en.wikipedia.org/wiki/Memory_leak
 [4]: https://en.wikipedia.org/wiki/Null_pointer
 [5]: https://rustup.rs
-[6]: https://estebanborai.com/en/notes/installing-the-rust-programming-language-on-windows
+[6]: https://leoborai.com/en/notes/installing-the-rust-programming-language-on-windows
 [7]: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Tutorial_local_library_website
 [8]: https://www.technologyreview.com/2023/02/14/1067869/rust-worlds-fastest-growing-programming-language/
 [9]: https://subscription.packtpub.com/book/web-development/9781800560819/2/ch02lvl1sec07/metaprogramming-with-macros
-[10]: https://github.com/EstebanBorai/local-library-website/commit/2f5920f2af75dc6e99f85e8824fbe0b251bc58c3
-[11]: https://github.com/EstebanBorai/local-library-website/commit/2dc8bea553f9887b9525c2c5bad52de573c1da29
+[10]: https://github.com/LeoBorai/local-library-website/commit/2f5920f2af75dc6e99f85e8824fbe0b251bc58c3
+[11]: https://github.com/LeoBorai/local-library-website/commit/2dc8bea553f9887b9525c2c5bad52de573c1da29

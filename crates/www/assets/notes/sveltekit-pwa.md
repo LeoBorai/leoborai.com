@@ -76,7 +76,7 @@ SvelteKit will automatically register a Service Worker for you if this file is p
 
 You can use my service worker definition as a base for your own, it will cache the static assets on load.
 
-https://github.com/EstebanBorai/estebanborai.com/commit/f77c29d329b355205da2c26b322be5f1317ce940#diff-0aba05b7e68a2bb0e8cebbd6297fafc218eaeff08345a12bd379181c4a88e454
+https://github.com/LeoBorai/leoborai.com/commit/f77c29d329b355205da2c26b322be5f1317ce940#diff-0aba05b7e68a2bb0e8cebbd6297fafc218eaeff08345a12bd379181c4a88e454
 
 Remember to change the [`CACHE_KEY`][1] to something unique to your project.
 
@@ -106,4 +106,4 @@ install it.
 PWAs are powerful solutions to help users visit your site often, with improved load times, a quick access icon
 which results familiar to mobile users and even updates/refresh procedures which allows you to deliver a better UX.
 
-[1]: https://github.com/EstebanBorai/estebanborai.com/commit/f77c29d329b355205da2c26b322be5f1317ce940#diff-0aba05b7e68a2bb0e8cebbd6297fafc218eaeff08345a12bd379181c4a88e454R9
+[1]: https://github.com/LeoBorai/leoborai.com/commit/f77c29d329b355205da2c26b322be5f1317ce940#diff-0aba05b7e68a2bb0e8cebbd6297fafc218eaeff08345a12bd379181c4a88e454R9

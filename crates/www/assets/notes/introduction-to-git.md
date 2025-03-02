@@ -179,7 +179,7 @@ Check it out:
 
 ```
 commit 28bcd7d811e0da14acb3fcf1a0482603e0bc4238 (HEAD -> main)
-Author: Esteban Borai <estebanborai@gmail.com>
+Author: Leo Borai <estebanborai@gmail.com>
 Date:   Thu Oct 28 19:00:08 2021 -0300
 
     feat: implement the `sum` function
@@ -239,13 +239,13 @@ Our `git log` will now hold entries, one per commit:
 
 ```bash
 commit de154de77e4901f5c8a946080fce47bb083cdd93 (HEAD -> main)
-Author: Esteban Borai <estebanborai@gmail.com>
+Author: Leo Borai <estebanborai@gmail.com>
 Date:   Thu Oct 28 19:07:37 2021 -0300
 
     feat: impl `substract`, `multiply` and `divide`
 
 commit 28bcd7d811e0da14acb3fcf1a0482603e0bc4238
-Author: Esteban Borai <estebanborai@gmail.com>
+Author: Leo Borai <estebanborai@gmail.com>
 Date:   Thu Oct 28 19:00:08 2021 -0300
 
     feat: implement the `sum` function
@@ -326,19 +326,19 @@ git commit -m 'fix(division): throw on divider equals 0'
 git log
 
 commit 5925cf6545ceb4843103d7c1f9339c385c08da4f (HEAD -> fix/throw-on-divide-by-0)
-Author: Esteban Borai <estebanborai@gmail.com>
+Author: Leo Borai <estebanborai@gmail.com>
 Date:   Thu Oct 28 19:34:45 2021 -0300
 
     fix(division): throw on divider equals 0
 
 commit de154de77e4901f5c8a946080fce47bb083cdd93 (main)
-Author: Esteban Borai <estebanborai@gmail.com>
+Author: Leo Borai <estebanborai@gmail.com>
 Date:   Thu Oct 28 19:07:37 2021 -0300
 
     feat: impl `substract`, `multiply` and `divide`
 
 commit 28bcd7d811e0da14acb3fcf1a0482603e0bc4238
-Author: Esteban Borai <estebanborai@gmail.com>
+Author: Leo Borai <estebanborai@gmail.com>
 Date:   Thu Oct 28 19:00:08 2021 -0300
 
     feat: implement the `sum` function
@@ -393,19 +393,19 @@ Fast-forward
 git log
 
 commit 5925cf6545ceb4843103d7c1f9339c385c08da4f (HEAD -> main, fix/throw-on-divide-by-0)
-Author: Esteban Borai <estebanborai@gmail.com>
+Author: Leo Borai <estebanborai@gmail.com>
 Date:   Thu Oct 28 19:34:45 2021 -0300
 
     fix(division): throw on divider equals 0
 
 commit de154de77e4901f5c8a946080fce47bb083cdd93 (main)
-Author: Esteban Borai <estebanborai@gmail.com>
+Author: Leo Borai <estebanborai@gmail.com>
 Date:   Thu Oct 28 19:07:37 2021 -0300
 
     feat: impl `substract`, `multiply` and `divide`
 
 commit 28bcd7d811e0da14acb3fcf1a0482603e0bc4238
-Author: Esteban Borai <estebanborai@gmail.com>
+Author: Leo Borai <estebanborai@gmail.com>
 Date:   Thu Oct 28 19:00:08 2021 -0300
 
     feat: implement the `sum` function
@@ -418,7 +418,7 @@ Note that the latest commit is now holded by both `main` and `fix/throw-on-divid
 
 ```
 commit 5925cf6545ceb4843103d7c1f9339c385c08da4f (HEAD -> main, fix/throw-on-divide-by-0)
-Author: Esteban Borai <estebanborai@gmail.com>
+Author: Leo Borai <estebanborai@gmail.com>
 Date:   Thu Oct 28 19:34:45 2021 -0300
 
     fix(division): throw on divider equals 0

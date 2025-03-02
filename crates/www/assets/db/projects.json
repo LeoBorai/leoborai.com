@@ -17,7 +17,7 @@
   },
   {
     "title": "Network Interface",
-    "repo_url": "https://github.com/EstebanBorai/network-interface",
+    "repo_url": "https://github.com/LeoBorai/network-interface",
     "extract": "Rust Crate to Interact with Network Interfaces using a unified API for different platforms.",
     "website": null,
     "tags": ["rust", "ffi", "multiplatform", "crate", "networking"],
@@ -25,7 +25,7 @@
   },
   {
     "title": "Local IP Address",
-    "repo_url": "https://github.com/EstebanBorai/local-ip-address",
+    "repo_url": "https://github.com/LeoBorai/local-ip-address",
     "extract": "Rust Crate to Retrieve system's local IP address and Network Interfaces/Adapters on FreeBSD, Linux, macOS and Windows.",
     "website": null,
     "tags": ["rust", "ffi", "multiplatform", "crate", "networking"],
@@ -33,7 +33,7 @@
   },
   {
     "title": "Wait-On",
-    "repo_url": "https://github.com/EstebanBorai/wait-on",
+    "repo_url": "https://github.com/LeoBorai/wait-on",
     "extract": "Command-Line Utility to wait on the availability of resources such as Files, HTTP Servers, Ports & Sockets",
     "website": null,
     "tags": ["rust", "crate", "cli", "devops"],
@@ -41,7 +41,7 @@
   },
   {
     "title": "Git2Txt",
-    "repo_url": "https://github.com/EstebanBorai/git2txt",
+    "repo_url": "https://github.com/LeoBorai/git2txt",
     "extract": "Command-Line Utility to retrieve every Git repository file into a single TXT",
     "website": null,
     "tags": ["rust", "crate", "cli", "git", "llm"],
@@ -49,7 +49,7 @@
   },
   {
     "title": "rutcl",
-    "repo_url": "https://github.com/EstebanBorai/rutcl",
+    "repo_url": "https://github.com/LeoBorai/rutcl",
     "extract": "Chilean National ID (RUT) Parser",
     "website": null,
     "tags": ["rust", "crate", "cli", "rut", "chile"],
@@ -67,7 +67,7 @@
     "title": "Pxid",
     "repo_url": "https://github.com/whizzes/pxid",
     "extract": "An extended version of XID (Globally Unique Identifiers) which supports prefixes and is stored in 16 bytes",
-    "website": "https://estebanborai.com/notes/pxid-developer-friendy-ids",
+    "website": "https://leoborai.com/notes/pxid-developer-friendy-ids",
     "tags": ["rust", "xid", "id"],
     "langs": ["Rust"]
   },

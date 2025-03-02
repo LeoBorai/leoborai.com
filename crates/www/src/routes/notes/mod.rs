@@ -39,7 +39,7 @@ pub fn Notes() -> impl IntoView {
     view! {
         <Title
             text={move || "Notes"}
-            formatter=|text| format!("{text} — Esteban Borai")
+            formatter=|text| format!("{text} — Leo Borai")
         />
         <div>
             <Section
