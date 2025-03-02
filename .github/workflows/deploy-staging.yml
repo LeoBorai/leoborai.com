@@ -41,6 +41,6 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages deploy ./dist --project-name=${{ secrets.CLOUDFLARE_PAGES_STAGING_PROJECT_NAME }}
+          command: pages deploy ./dist --project-name=${{ secrets.CLOUDFLARE_PAGES_STAGING_PROJECT_NAME }} --branch=main
           workingDirectory: ./crates/www
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
