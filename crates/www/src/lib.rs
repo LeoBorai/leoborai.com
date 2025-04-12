@@ -3,7 +3,7 @@ mod routes;
 mod utils;
 
 use leptos::{component, view, IntoView};
-use leptos_meta::provide_meta_context;
+use leptos_meta::{provide_meta_context, Title};
 use leptos_router::{Route, Routes, A};
 use routes::projects::Projects;
 
@@ -36,10 +36,14 @@ pub fn App() -> impl IntoView {
                         <li>
                             <A class="font-body font-semibold text-sm" href="/bookshelf">"Bookshelf"</A>
                         </li>
+                        <li>
+                            <a class="font-body font-semibold text-sm" target="_blank" href="https://k8s.leoborai.com">"K8s Notebook"</a>
+                        </li>
                     </ul>
                 </nav>
             </header>
             <main class="py-6 min-h-[calc(100vh-130px)]">
+                <Title text="Leo Borai" />
                 <Routes>
                     <Route path="/" view=Home />
                     <Route path="/bookshelf" view=Bookshelf />
