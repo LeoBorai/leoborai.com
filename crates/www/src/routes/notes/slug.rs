@@ -160,6 +160,17 @@ fn parse_md_into_html(md: &str) -> Markdown {
                         }
                     }
                     Tag::Item => state.push_str("<li>"),
+                    Tag::Image { dest_url, .. } => {
+                        state.push_str(&format!(r#"<img src="{}" />"#, dest_url));
+                    }
+                    Tag::Link {
+                        dest_url, title, ..
+                    } => {
+                        state.push_str(&format!(
+                            r#"<a class="text-blue-600 underline" target="_blank" href="{}">{}"#,
+                            dest_url, title
+                        ));
+                    }
                     _ => {} // Tag::HtmlBlock => todo!(),
                             // Tag::FootnoteDefinition(cow_str) => todo!(),
                             // Tag::DefinitionList => todo!(),
@@ -172,8 +183,6 @@ fn parse_md_into_html(md: &str) -> Markdown {
                             // Tag::Emphasis => todo!(),
                             // Tag::Strong => todo!(),
                             // Tag::Strikethrough => todo!(),
-                            // Tag::Link { link_type, dest_url, title, id } => todo!(),
-                            // Tag::Image { link_type, dest_url, title, id } => todo!(),
                             // Tag::MetadataBlock(metadata_block_kind) => todo!(),
                 }
             }
@@ -200,6 +209,9 @@ fn parse_md_into_html(md: &str) -> Markdown {
                         }
                     }
                     pulldown_cmark::TagEnd::Item => state.push_str("</li>"),
+                    pulldown_cmark::TagEnd::Link => {
+                        state.push_str("</a>");
+                    }
                     _ => {} // pulldown_cmark::TagEnd::HtmlBlock => todo!(),
                             // pulldown_cmark::TagEnd::FootnoteDefinition => todo!(),
                             // pulldown_cmark::TagEnd::DefinitionList => todo!(),

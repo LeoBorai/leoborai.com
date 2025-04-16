@@ -7,3 +7,6 @@ dev:
 fmt:
   cargo clippy --workspace --fix --allow-dirty --allow-staged && cargo fmt
   leptosfmt crates/www/**/*.rs
+
+index-notes:
+  cargo run --bin cli -- notes

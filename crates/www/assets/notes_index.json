@@ -1,6 +1,23 @@
 [
   {
     "meta": {
+      "title": "Performing Firmware Updates on Keychron Keyboard",
+      "description": "Guide on performing a Firmware Update on Keychron Keyboard using the Keychron Launcher.",
+      "icon": "git",
+      "date": "2025-04-15",
+      "preview_image_url": "https://images.unsplash.com/photo-1638909067462-1310c4011610?q=1&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "published": true,
+      "categories": [
+        "keychron",
+        "firmware",
+        "update",
+        "wireless"
+      ]
+    },
+    "slug": "keychron-firmware-update-launcher"
+  },
+  {
+    "meta": {
       "title": "Deploy Rust to Fly.io",
       "description": "Walkthrough on how to deploy a Rust application to Fly.io",
       "icon": "rust",

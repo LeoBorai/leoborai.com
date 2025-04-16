@@ -76,6 +76,18 @@ fn list_entries() -> Result<Vec<PathBuf>> {
         .into_iter()
         .filter_map(|entry| {
             if let Ok(entry) = entry {
+                let path = entry.path();
+
+                if path.is_dir() {
+                    return None;
+                }
+
+                if let Some(ext) = path.extension() {
+                    if ext != "md" {
+                        return None;
+                    }
+                }
+
                 Some(entry.path())
             } else {
                 None
