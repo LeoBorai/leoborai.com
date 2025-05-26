@@ -1,11 +1,9 @@
 pub mod slug;
 
-use leptos::{
-    component, create_render_effect, create_rw_signal, spawn_local, view, For, IntoView, SignalGet,
-    SignalSet,
-};
+use leptos::prelude::*;
+use leptos::task::spawn_local;
 use leptos_meta::Title;
-use leptos_router::A;
+use leptos_router::components::A;
 use proto::{NotesIndex, RichNoteMetadata};
 use reqwest::get;
 
@@ -13,9 +11,8 @@ use crate::{components::atoms::section::Section, utils::hostname};
 
 #[component]
 pub fn Notes() -> impl IntoView {
-    let notes_index = create_rw_signal::<Vec<RichNoteMetadata>>(Vec::default());
-
-    create_render_effect(move |_| {
+    let notes_index: RwSignal<Vec<RichNoteMetadata>> = RwSignal::new(Vec::default());
+    let _ = RenderEffect::new(move |_| {
         spawn_local(async move {
             let Ok(mut url) = hostname() else {
                 return;
@@ -37,10 +34,7 @@ pub fn Notes() -> impl IntoView {
     });
 
     view! {
-        <Title
-            text={move || "Notes"}
-            formatter=|text| format!("{text} — Leo Borai")
-        />
+        <Title text=move || "Notes" formatter=|text| format!("{text} — Leo Borai") />
         <div>
             <Section
                 title="Notes"
@@ -48,43 +42,45 @@ pub fn Notes() -> impl IntoView {
             />
             <ul class="py-4">
                 <For
-                  each=move || notes_index.get()
-                  key=|note| note.slug.clone()
-                  children=move |RichNoteMetadata {
-                      meta,
-                      slug,
-                  }| {
-                    view! {
-                        <article class="self-start flex flex-col justify-start w-full col-span-4 border-b mb-4">
-                            <h3 class="hover:underline">
-                                <A class="font-body font-semibold" exact={true} href={format!("/notes/{slug}")}>
-                                    {meta.title}
-                                </A>
-                            </h3>
-                            <p class="text-gray-600 py-2 text-sm truncate">
-                                {meta.description}
-                            </p>
-                            <ul class="flex justify-start items-start flex-wrap gap-2 py-2">
-                                <For
-                                    each=move || meta.categories.clone()
-                                    key=|cat| cat.clone()
-                                    children=move |cat: String| {
-                                        view! {
-                                            <li class="text-xs bg-gray-100 text-gray-800 uppercase rounded-md py-0.5 px-2">
-                                                {cat}
-                                            </li>
+                    each=move || notes_index.get()
+                    key=|note| note.slug.clone()
+                    children=move |RichNoteMetadata { meta, slug }| {
+                        view! {
+                            <article class="self-start flex flex-col justify-start w-full col-span-4 border-b mb-4">
+                                <h3 class="hover:underline">
+                                    <A exact=true href=format!("/notes/{slug}")>
+                                        <span class="font-body font-semibold">{meta.title}</span>
+                                    </A>
+                                </h3>
+                                <p class="text-gray-600 py-2 text-sm truncate">
+                                    {meta.description}
+                                </p>
+                                <ul class="flex justify-start items-start flex-wrap gap-2 py-2">
+                                    <For
+                                        each=move || meta.categories.clone()
+                                        key=|cat| cat.clone()
+                                        children=move |cat: String| {
+                                            view! {
+                                                <li class="text-xs bg-gray-100 text-gray-800 uppercase rounded-md py-0.5 px-2">
+                                                    {cat}
+                                                </li>
+                                            }
                                         }
-                                    }
-                                />
-                            </ul>
-                            <div class="flex">
-                                <span class="flex items-center">
-                                    <time class="py-2 text-xs uppercase" datetime={meta.date.to_string()}>{meta.date.to_string()}</time>
-                                </span>
-                            </div>
-                        </article>
+                                    />
+                                </ul>
+                                <div class="flex">
+                                    <span class="flex items-center">
+                                        <time
+                                            class="py-2 text-xs uppercase"
+                                            datetime=meta.date.to_string()
+                                        >
+                                            {meta.date.to_string()}
+                                        </time>
+                                    </span>
+                                </div>
+                            </article>
+                        }
                     }
-                  }
                 />
             </ul>
         </div>

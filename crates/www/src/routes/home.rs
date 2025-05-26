@@ -1,4 +1,4 @@
-use leptos::{component, view, IntoView};
+use leptos::prelude::*;
 
 const CAREER_START_YEAR: i32 = 2017;
 const RUST_START_YEAR: i32 = 2019;
@@ -18,12 +18,14 @@ pub fn Home() -> impl IntoView {
                 <article class="text-sm text-gray-600">
                     <h3 class="underline my-2">"Web Development Experience"</h3>
                     <p>
-                        "Started to work as a Web Developer with ReactJS and C# in "{CAREER_START_YEAR}", then moved into other similar positions"
+                        "Started to work as a Web Developer with ReactJS and C# in "
+                        {CAREER_START_YEAR}", then moved into other similar positions"
                         " using technologies like NodeJS, NextJS, Go, Svelte/Kit and EmberJS."
                     </p>
                     <h3 class="underline my-2">"Rust Experience & Systems Programming"</h3>
                     <p>
-                        "In  "{RUST_START_YEAR}" I started learning Rust with interest in the Systems Programming field."
+                        "In  "{RUST_START_YEAR}
+                        " I started learning Rust with interest in the Systems Programming field."
                         " Since then I have been mainly focused in Rust and its ecosystem, I keep it up with Rust by using it on"
                         " my daily job and personal projects."
                     </p>

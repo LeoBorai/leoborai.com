@@ -7,22 +7,25 @@ members = [
 resolver = "2"
 
 [workspace.dependencies]
-anyhow = "1.0.86"
-chrono = "0.4.31"
-clap = "4.3.11"
-dotenv = "0.15.0"
-leptos =  { version = "0.6", features = ["csr"] }
-leptos_meta = { version = "0.6", features = ["csr"] }
-leptos_router = { version = "0.6", features = ["csr"] }
-link-preview = "0.1.1"
-pulldown-cmark = "0.12.2"
-reqwest = "0.12.9"
+anyhow = "1.0"
+chrono = "0.4"
+clap = "4.3"
+console_error_panic_hook = "0.1"
+console_log = "1"
+dotenv = "0.15"
+leptos =  { version = "0.8", features = ["csr"] }
+leptos_meta = { version = "0.8" }
+leptos_router = { version = "0.8" }
+log = "0.4"
+link-preview = "0.1"
+pulldown-cmark = "0.12"
+reqwest = "0.12"
 serde = "1.0"
 serde_json = "1.0"
-thiserror = "1.0.38"
-tokio = "1.29.1"
-tracing = "0.1.37"
-tracing-subscriber = "0.3.15"
-yaml-front-matter = "0.1.0"
+thiserror = "1.0"
+tokio = "1.29"
+tracing = "0.1"
+tracing-subscriber = "0.3"
+yaml-front-matter = "0.1"
 wasm-bindgen = "0.2"
 web-sys = "0.3"

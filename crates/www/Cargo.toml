@@ -1,5 +1,5 @@
 [package]
-name = "estebanborai-dotcom"
+name = "leoborai-dotcom"
 version = "0.0.0"
 edition = "2021"
 publish = false
@@ -15,9 +15,12 @@ path = "src/bin/main.rs"
 [dependencies]
 anyhow = { workspace = true }
 chrono = { workspace = true }
+console_error_panic_hook = { workspace = true }
+console_log = { workspace = true }
 leptos = { workspace = true, features = ["csr"] }
-leptos_meta = { workspace = true, features = ["csr"] }
-leptos_router = { workspace = true, features = ["csr"] }
+leptos_meta = { workspace = true }
+leptos_router = { workspace = true }
+log = { workspace = true }
 pulldown-cmark = { workspace = true }
 reqwest = { workspace = true, features = ["json"] }
 serde = { workspace = true }

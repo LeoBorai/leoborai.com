@@ -1,9 +1,9 @@
-use leptos::{component, view, IntoView, TextProp};
+use leptos::prelude::*;
 
 #[component]
 pub fn Section(
-    #[prop(into, optional)] title: TextProp,
-    #[prop(into, optional)] description: TextProp,
+    #[prop(into, optional)] title: String,
+    #[prop(into, optional)] description: String,
 ) -> impl IntoView {
     view! {
         <div id="section-title pb-4">

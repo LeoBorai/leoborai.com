@@ -1,9 +1,6 @@
-use leptos::{
-    component, create_render_effect, create_rw_signal, spawn_local, view, For, IntoView, SignalGet,
-    SignalGetUntracked, SignalSet,
-};
+use leptos::{prelude::*, task::spawn_local};
 use leptos_meta::Title;
-use leptos_router::{use_route, A};
+use leptos_router::{components::A, hooks::use_params_map};
 use reqwest::get;
 use serde::Deserialize;
 use wasm_bindgen::prelude::wasm_bindgen;
@@ -31,16 +28,15 @@ extern "C" {
 
 #[component]
 pub fn Note() -> impl IntoView {
-    let metadata = create_rw_signal::<Option<Metadata>>(None);
-    let note_md = create_rw_signal::<Option<String>>(None);
-    let headings = create_rw_signal::<Vec<String>>(Vec::default());
-
-    create_render_effect(move |_| {
-        let route = use_route();
+    let metadata: RwSignal<Option<Metadata>> = RwSignal::new(None);
+    let note_md: RwSignal<Option<String>> = RwSignal::new(None);
+    let headings: RwSignal<Vec<String>> = RwSignal::new(Vec::default());
+    let _ = RenderEffect::new(move |_| {
+        let params_map = use_params_map();
 
         spawn_local(async move {
             // FIXME: Check slugs against list of notes
-            if let Some(slug) = route.params().get_untracked().get("slug") {
+            if let Some(slug) = params_map.get_untracked().get("slug") {
                 if slug.is_empty() {
                     return;
                 }
@@ -78,14 +74,20 @@ pub fn Note() -> impl IntoView {
 
     view! {
         <Title
-            text={move || metadata.get().map(|meta| meta.title).unwrap_or_default()}
+            text=move || metadata.get().map(|meta| meta.title).unwrap_or_default()
             formatter=|text| format!("{text} — Leo Borai")
         />
         <section id="note-container" class="pb-10">
             <article id="note-header" class="pb-8">
-                <h1 class="text-3xl font-semibold py-2">{move || metadata.get().map(|meta| meta.title).unwrap_or_default()}</h1>
-                <p class="text-gray-600 text-sm">{{move || metadata.get().map(|meta| meta.description).unwrap_or_default()}}</p>
-                <time class="text-sm text-gray-600">{move || metadata.get().map(|meta| meta.date).unwrap_or_default()}</time>
+                <h1 class="text-3xl font-semibold py-2">
+                    {move || metadata.get().map(|meta| meta.title).unwrap_or_default()}
+                </h1>
+                <p class="text-gray-600 text-sm">
+                    {{ move || metadata.get().map(|meta| meta.description).unwrap_or_default() }}
+                </p>
+                <time class="text-sm text-gray-600">
+                    {move || metadata.get().map(|meta| meta.date).unwrap_or_default()}
+                </time>
             </article>
             <div class="md:relative md:grid md:gap-4 md:grid-cols-[900px,200px]">
                 <aside id="note-toc" class="md:row-start-1 md:col-start-2 md:col-span-1 md:w-full">
@@ -97,14 +99,20 @@ pub fn Note() -> impl IntoView {
                             children=move |heading: String| {
                                 view! {
                                     <li class="text-sm text-gray-400 hover:text-gray-600">
-                                        <A exact={true} href={format!("#{}", heading)}>{heading}</A>
+                                        <A exact=true href=format!("#{}", heading)>
+                                            {heading}
+                                        </A>
                                     </li>
                                 }
                             }
                         />
                     </ul>
                 </aside>
-                <div id="note-content" class="md:row-start-1 md:col-start-1 md:col-span-1 md:w-fill" inner_html={move || note_md.get().unwrap_or_default()}></div>
+                <div
+                    id="note-content"
+                    class="md:row-start-1 md:col-start-1 md:col-span-1 md:w-fill"
+                    inner_html=move || note_md.get().unwrap_or_default()
+                ></div>
             </div>
             <div class="group grid grid-cols-[100px,auto] gap-4 border-t border-gray-400 pt-4">
                 <figure class="grayscale group-hover:grayscale-0 rounded-full overflow-hidden flex justify-center items-center h-[100px] w-[100px]">
@@ -114,12 +122,15 @@ pub fn Note() -> impl IntoView {
                     <h1 class="text-lg text-gray-800">"Leo Borai"</h1>
                     <div class="text-sm space-y-2 text-gray-600">
                         <p>
-                            "Hi there! I'm a "<u>"Rust Software Engineer"</u>" with 8 years of experience in Systems and Web Programming using Rust & TypeScript."
+                            "Hi there! I'm a "<u>"Rust Software Engineer"</u>
+                            " with 8 years of experience in Systems and Web Programming using Rust & TypeScript."
                         </p>
                         <p>
                             "I'm passionate about Open-Source and enjoy reading books, working out & playing videogames."
                         </p>
-                        <p>"I've had the opportunity to work with companies like InfinyOn, GOintegro & Teleperformance."</p>
+                        <p>
+                            "I've had the opportunity to work with companies like InfinyOn, GOintegro & Teleperformance."
+                        </p>
                     </div>
                 </article>
             </div>
