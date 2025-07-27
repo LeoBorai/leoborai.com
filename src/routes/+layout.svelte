@@ -7,6 +7,37 @@
 	let { children } = $props();
 </script>
 
+<svelte:head>
+	<title>Leo Borai | Rust Software Engineer</title>
+	<meta
+		name="description"
+		content="Leo Borai is a Rust Software Engineer with expertise in building efficient and reliable software solutions."
+	/>
+	<meta
+		name="keywords"
+		content="Rust, Software Engineer, Leo Borai, programming, software development, GitHub"
+	/>
+	<meta name="author" content="Leo Borai" />
+	<meta property="og:title" content="Leo Borai | Rust Software Engineer" />
+	<meta
+		property="og:description"
+		content="Explore the work and experience of Leo Borai, a Rust Software Engineer dedicated to creating high-quality software."
+	/>
+	<meta property="og:url" content="https://github.com/LeoBorai" />
+	<meta property="og:image" content="https://github.com/LeoBorai.png" />
+	<meta property="og:type" content="profile" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Leo Borai | Rust Software Engineer" />
+	<meta
+		name="twitter:description"
+		content="Discover the projects and skills of Leo Borai, a Rust Software Engineer."
+	/>
+	<meta name="twitter:image" content="https://github.com/LeoBorai.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="canonical" href="https://github.com/LeoBorai" />
+	<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+</svelte:head>
+
 <div class="flex w-full">
 	<div class="fixed inset-0 flex justify-center sm:px-8">
 		<div class="flex w-full max-w-7xl lg:px-8">

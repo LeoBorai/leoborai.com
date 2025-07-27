@@ -1,7 +1,9 @@
-<script>
-	import Experience from '$lib/components/atoms/Experience.svelte';
-	import Newsletter from '$lib/components/atoms/Newsletter.svelte';
+<script lang="ts">
 	import NoteEntry from '$lib/components/atoms/NoteEntry.svelte';
+
+	import type { PageProps } from './$types';
+
+	let { data }: PageProps = $props();
 </script>
 
 <div class="mt-9 sm:px-8">
@@ -12,7 +14,7 @@
 					<h1
 						class="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100"
 					>
-						Rust Software Developer doing AI integrations &amp; Open-Source
+						Rust Software Developer doing AI Engineering &amp; Open-Source
 					</h1>
 					<p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
 						I’m a software developer focused on Rust programming, AI integrations, and open-source
@@ -148,10 +150,17 @@
 			<div class="mx-auto max-w-2xl lg:max-w-5xl">
 				<div class="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
 					<div class="flex flex-col gap-16">
-						<NoteEntry />
-						<NoteEntry />
-						<NoteEntry />
-						<NoteEntry />
+						<h2 class="flex text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+							Recent Notes
+						</h2>
+						{#each data.notes as note (note.slug)}
+							<NoteEntry
+								title={note.meta.title}
+								description={note.meta.description}
+								date={note.meta.date}
+								slug={note.slug}
+							/>
+						{/each}
 					</div>
 					<div class="space-y-10 lg:pl-16 xl:pl-24">
 						<!-- <Newsletter />
