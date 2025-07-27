@@ -9,11 +9,6 @@ preview_image_url: "https://images.unsplash.com/photo-1596496181848-3091d4878b24
 published: true
 ---
 
-<script>
-  import Quote from '../../lib/components/notes/components/Quote.svelte';
-  import GabbleArhitecture from '../../lib/components/notes/static/writing-e2e-tests-for-axum-and-graphql/GabbleArhitecture.svelte';
-</script>
-
 As your application grows in features you want to make sure different flows
 work as expected. For isolated pieces of logic it's very practical to use the
 built-in approach for tests in `cargo`.
@@ -34,16 +29,9 @@ layer in the following order:
 2. Services (Domain Logic)
 3. Database (PostgreSQL)
 
-<figure class="border overflow-hidden w-10/12">
-  <GabbleArhitecture />
-</figure>
-
-<Quote>
-  Gabble stills in a very early development, but you can join us and help
-  building it! Visit our Discord server <a href="https://discord.gg/yde6mcgs2C" target="_blank">Whizzes</a>,
-  a place to learn Rust and Svelte with English/Spanish speakers by building in
-  the Open Source.
-</Quote>
+> Gabble stills in a very early development, but you can join us and help building it!
+> Visit our Discord server <a href="https://discord.gg/yde6mcgs2C" target="_blank">Whizzes</a>,
+> a place to learn Rust and Svelte with English/Spanish speakers by building in the Open Source.
 
 Its important to make sure each layer works as expected, when changes are made
 on certain layers we dont want to have regression bugs from unexpected behavior.
@@ -68,15 +56,13 @@ crates and split respossibilities, the crates are the following:
 - **Server**: GraphQL Server logic
 - **Test**: Here is where our E2E tests live!
 
-<Quote>
-  You can
-  <a
-    target="_blank"
-    href="https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html"
-  >
-    read more on Cargo Workspaces here
-  </a>!
-</Quote>
+> You can
+> <a
+>   target="_blank"
+>   href="https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html"
+> >
+>   read more on Cargo Workspaces here
+> </a>!
 
 ## Writing a test compliant GraphQL Server with Async-GraphQL
 
