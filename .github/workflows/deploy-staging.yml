@@ -1,46 +1,41 @@
 name: Deploy Staging
-
 on:
   push:
     branches:
-      - main
+      - 'main'
 
 jobs:
-  publish:
-    name: Publish
+  deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      deployments: write
+    name: Publish Staging
     steps:
-      - name: Checkout Source Code
+      - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Setup Rust
-        uses: dtolnay/rust-toolchain@stable
         with:
-          targets: wasm32-unknown-unknown
-          components: rustfmt, clippy
+          ref: 'main'
 
-      - name: Setup Rust Cache
-        uses: Swatinem/rust-cache@v2
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
 
-      - name: Setup Cargo Binstall
-        uses: cargo-bins/cargo-binstall@main
-
-      - name: Install Rust Binaries
-        run: |
-          cargo binstall -y --force trunk
+      - name: Install Dependencies
+        run: bun i
 
       - name: Build
-        working-directory: ./crates/www
-        run: trunk build --release
+        env:
+          NODE_ENV: 'development'
+          VERSION: ${{ github.ref_name }}
+        run: bun run build
 
-      - name: Deploy Client
+      - name: Install NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+
+      - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          command: pages deploy ./dist --project-name=${{ secrets.CLOUDFLARE_PAGES_STAGING_PROJECT_NAME }} --branch=main
-          workingDirectory: ./crates/www
+          command: pages deploy ./.svelte-kit/cloudflare --project-name=${{ secrets.CLOUDFLARE_PAGES_STAGING_PROJECT_NAME }} --branch=main
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
