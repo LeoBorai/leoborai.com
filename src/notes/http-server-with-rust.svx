@@ -137,9 +137,9 @@ Rust
 
 > Debido a que Rust es un lenguaje de bajo nivel, el mismo no hace suposiciones
 > sobre el contexto de ejecución, esto le permite definir como se ejecutarán las
-> instrucciónes en cada dispositivo según las limitaciones (memoria,
-> capacidad del CPU, display y entrada de datos). Por esto debemos definir el
-> ejecutor asincrónico a usar explícitamente.
+> instrucciónes en cada dispositivo según las especificaciones (registros e
+> instrucciones del CPU). Por esto debemos definir el ejecutor asincrónico a
+> usar explícitamente.
 
 Instalaremos `axum` y `tokio` usando `cargo add`, a la vez habilitaremos la
 feature `full` para `tokio`.
