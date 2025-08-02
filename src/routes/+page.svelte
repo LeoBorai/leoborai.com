@@ -1,4 +1,5 @@
 <script lang="ts">
+	import GitHubContribs from '$lib/components/atoms/GitHubContribs.svelte';
 	import Hero from '$lib/components/atoms/Hero.svelte';
 	import NoteEntry from '$lib/components/atoms/NoteEntry.svelte';
 	import SocialNetworks from '$lib/components/atoms/SocialNetworks.svelte';
@@ -43,6 +44,7 @@
 						{/each}
 					</div>
 					<div class="space-y-10 lg:pl-16 xl:pl-24">
+						<GitHubContribs contributionsCalendar={data.contributionsCalendar} />
 						<!-- <Newsletter />
 						<Experience /> -->
 					</div>
