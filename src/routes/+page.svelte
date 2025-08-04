@@ -2,6 +2,7 @@
 	import Hero from '$lib/components/atoms/Hero.svelte';
 	import NoteEntry from '$lib/components/atoms/NoteEntry.svelte';
 	import SocialNetworks from '$lib/components/atoms/SocialNetworks.svelte';
+	import Technologies from '$lib/components/atoms/Technologies.svelte';
 
 	import type { PageProps } from './$types';
 
@@ -43,6 +44,7 @@
 						{/each}
 					</div>
 					<div class="space-y-10 lg:pl-16 xl:pl-24">
+						<Technologies />
 						<!-- <Newsletter />
 						<Experience /> -->
 					</div>
