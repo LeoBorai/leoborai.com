@@ -1,4 +1,4 @@
-export type FetchFn = (input: RequestInfo | URL, init?: RequestInit) => Promise<Response>;
+type FetchFn = (input: RequestInfo | URL, init?: RequestInit) => Promise<Response>;
 
 export type ContributionsCalendar = {
 	totalContributions: number;
@@ -50,29 +50,25 @@ export class GitHub {
 			body: JSON.stringify(body),
 			headers: headers
 		});
+		const { data } = await response.json();
 
-		if (response.ok) {
-			const { data } = await response.json();
+		if (data.user.contributionsCollection) {
+			const { totalContributions, weeks } = data.user.contributionsCollection.contributionCalendar;
+			const contributions = weeks.flatMap(
+				(week: {
+					contributionDays: { date: string; contributionCount: number; color: string }[];
+				}) =>
+					week.contributionDays.map(({ date, contributionCount, color }) => ({
+						date,
+						contributionCount,
+						color
+					}))
+			);
 
-			if (data.user.contributionsCollection) {
-				const { totalContributions, weeks } =
-					data.user.contributionsCollection.contributionCalendar;
-				const contributions = weeks.flatMap(
-					(week: {
-						contributionDays: { date: string; contributionCount: number; color: string }[];
-					}) =>
-						week.contributionDays.map(({ date, contributionCount, color }) => ({
-							date,
-							contributionCount,
-							color
-						}))
-				);
-
-				return {
-					totalContributions,
-					contributions
-				};
-			}
+			return {
+				totalContributions,
+				contributions
+			};
 		}
 
 		throw new Error('No contributions found');
