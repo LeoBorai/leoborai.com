@@ -15,6 +15,22 @@
 			bgColor: '#3178c6',
 			note: 'HTTP Servers and Web Applications with React, Next.js, and SvelteKit.',
 			isFullStack: true
+		},
+		{
+			name: 'Svelte/Kit',
+			since: 2020,
+			logo: '/img/techstack/sveltekit.png',
+			bgColor: '#FFFFFF',
+			note: 'Web Applications with SveletKit running on Cloudflare Workers',
+			isFullStack: true
+		},
+		{
+			name: 'ReactJS',
+			since: 2017,
+			logo: '/img/techstack/reactjs.webp',
+			bgColor: '#222222',
+			note: 'Worked on building Web Applications with React as Single Page App and also Full-Stack with NextJS',
+			isFullStack: true
 		}
 	];
 </script>
@@ -37,7 +53,7 @@
 			/>
 		</svg>
 
-		<span class="ml-3">Tools & Technologies</span>
+		<span class="ml-3">Languages & Frameworks</span>
 	</h2>
 	<ol class="mt-6 space-y-4">
 		{#each TECHNOLOGIES as tech (tech.name)}
@@ -65,12 +81,6 @@
 					</dd>
 					<dt class="sr-only">Description</dt>
 					<dd class="text-xs text-zinc-500 dark:text-zinc-400">{tech.note}</dd>
-					{#if tech.isFullStack}
-						<dt class="sr-only">FullStack Labeled</dt>
-						<dd class="rounded-md bg-white/10 px-2 py-0.5 text-xs text-white uppercase">
-							FullStack
-						</dd>
-					{/if}
 					<dt class="sr-only">Date</dt>
 					<dd
 						class="ml-auto text-xs text-zinc-400 dark:text-zinc-500"

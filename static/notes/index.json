@@ -1,6 +1,76 @@
 [
   {
     "meta": {
+      "title": "Performing Firmware Updates on Keychron Keyboard",
+      "description": "Guide on performing a Firmware Update on Keychron Keyboard using the Keychron Launcher.",
+      "icon": "git",
+      "date": "2025-04-15",
+      "preview_image_url": "https://images.unsplash.com/photo-1638909067462-1310c4011610?q=1&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "published": true,
+      "categories": [
+        "keychron",
+        "firmware",
+        "update",
+        "wireless"
+      ]
+    },
+    "slug": "keychron-firmware-update-launcher"
+  },
+  {
+    "meta": {
+      "title": "Deploy Rust to Fly.io",
+      "description": "Walkthrough on how to deploy a Rust application to Fly.io",
+      "icon": "rust",
+      "date": "2024-11-19",
+      "preview_image_url": "https://images.unsplash.com/photo-1506322526487-d8a94af63688?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=640",
+      "published": true,
+      "categories": [
+        "rust",
+        "postgresql",
+        "dns",
+        "flyio"
+      ]
+    },
+    "slug": "deploy-rust-to-fly-io"
+  },
+  {
+    "meta": {
+      "title": "Configure your SvelteKit Web Application to be a PWA",
+      "description": "Guide on how to setup a PWA in your SvelteKit web application.",
+      "icon": "svelte",
+      "date": "2024-06-07",
+      "preview_image_url": "/images/preview/sveltekit-pwa.png",
+      "published": true,
+      "categories": [
+        "svelte",
+        "pwa",
+        "sveltekit",
+        "web-development",
+        "javascript"
+      ]
+    },
+    "slug": "sveltekit-pwa"
+  },
+  {
+    "meta": {
+      "title": "Use Google Chrome Incognito Mode as default mode on macOS",
+      "description": "Walkthrough on how to set Google Chrome Incognito Mode as default mode on macOS",
+      "icon": "dev",
+      "date": "2024-05-27",
+      "preview_image_url": "/images/preview/use-chrome-incognito-as-default.png",
+      "published": true,
+      "categories": [
+        "chrome",
+        "browser",
+        "development",
+        "macos",
+        "setup"
+      ]
+    },
+    "slug": "use-chrome-incognito-as-default"
+  },
+  {
+    "meta": {
       "title": "Rust GitHub Actions Release Workflow",
       "description": "Setting up a GitHub Actions Workflow to tag and release a Rust Crate via Workflow Dispatch",
       "icon": "rust",
@@ -73,7 +143,7 @@
   {
     "meta": {
       "title": "Pxid: Developer Friendly IDs",
-      "description": "When it comes to work with taxonomy rich APIs, having descriptive IDs that prevides context about the resource in question is crucial",
+      "description": "When it comes to work with taxonomy rich APIs, having descriptive IDs that provides context about the resource in question is crucial",
       "icon": "rust",
       "date": "2023-07-22",
       "preview_image_url": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2272&q=1",
@@ -87,7 +157,7 @@
         "rust"
       ]
     },
-    "slug": "pxid-developer-friendly-ids"
+    "slug": "pxid-developer-friendy-ids"
   },
   {
     "meta": {

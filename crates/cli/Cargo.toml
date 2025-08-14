@@ -1,0 +1,30 @@
+[package]
+name = "cli"
+version = "0.1.0"
+edition = "2024"
+authors = ["Leo Borai <estebanborai@gmail.com>"]
+
+[lib]
+name = "libcli"
+path = "src/lib.rs"
+
+[[bin]]
+name = "cli"
+path = "src/bin/main.rs"
+
+[dependencies]
+anyhow = "1.0.75"
+clap = { version = "4.3.11", features = ["std", "derive", "env"] }
+link-preview = { version = "0.1.1", features = ["fetch"] }
+
+# Workspace Dependencies
+chrono = { workspace = true }
+dotenv = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tokio = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+
+# Local
+notes = { path = "../notes" }
