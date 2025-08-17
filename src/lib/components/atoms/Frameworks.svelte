@@ -1,22 +1,20 @@
 <script lang="ts">
-	const TOOLS = [
+	const FRAMEWORKS = [
 		{
-			name: 'Claude',
-			logo: '/img/techstack/claude.png',
+			name: 'Svelte/Kit',
+			since: 2020,
+			logo: '/img/techstack/sveltekit.png',
 			bgColor: '#FFFFFF',
-			note: 'Claude Code CLI for code generation on a "human-in-the-loop" basis.'
+			note: 'Web Applications with SveletKit running on Cloudflare Workers',
+			isFullStack: true
 		},
 		{
-			name: 'Git',
-			logo: '/img/techstack/git.png',
-			bgColor: '#FFFFFF',
-			note: 'Preferred VCS, used on both personal and professional projects.'
-		},
-		{
-			name: 'Docker',
-			logo: '/img/techstack/docker.png',
-			bgColor: '#fff',
-			note: 'Containerization for development and deployment, including Docker Compose.'
+			name: 'ReactJS',
+			since: 2017,
+			logo: '/img/techstack/reactjs.webp',
+			bgColor: '#222222',
+			note: 'Worked on building Web Applications with React as Single Page App and also Full-Stack with NextJS',
+			isFullStack: true
 		}
 	];
 </script>
@@ -34,15 +32,15 @@
 			<path
 				stroke-linecap="round"
 				stroke-linejoin="round"
-				d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"
+				d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z"
 				class="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
 			/>
 		</svg>
 
-		<span class="ml-3">Technologies</span>
+		<span class="ml-3">Frameworks</span>
 	</h2>
 	<ol class="mt-6 space-y-4">
-		{#each TOOLS as tech (tech.name)}
+		{#each FRAMEWORKS as tech (tech.name)}
 			<li class="flex gap-4">
 				<div
 					class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0"
@@ -67,6 +65,15 @@
 					</dd>
 					<dt class="sr-only">Description</dt>
 					<dd class="text-xs text-zinc-500 dark:text-zinc-400">{tech.note}</dd>
+					<dt class="sr-only">Date</dt>
+					<dd
+						class="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
+						aria-label="2019 until Present"
+					>
+						<time datetime={tech.since.toString()}>{tech.since}</time>
+						<span aria-hidden="true">—</span>
+						<span>{new Date().getFullYear() - tech.since} yoe.</span>
+					</dd>
 				</dl>
 			</li>
 		{/each}
