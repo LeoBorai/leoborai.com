@@ -8,11 +8,12 @@
 							<div
 								class="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-zinc-800 dark:text-zinc-200"
 							>
-								<a class="transition hover:text-indigo-500 dark:hover:text-indigo-400" href="/"
+								<a class="transition hover:text-emerald-500 dark:hover:text-emerald-400" href="/"
 									>Home</a
 								>
-								<a class="transition hover:text-indigo-500 dark:hover:text-indigo-400" href="/notes"
-									>Notes</a
+								<a
+									class="transition hover:text-emerald-500 dark:hover:text-emerald-400"
+									href="/notes">Notes</a
 								>
 							</div>
 							<p class="text-sm text-zinc-400 dark:text-zinc-500">

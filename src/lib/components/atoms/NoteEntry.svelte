@@ -35,7 +35,7 @@
 	</p>
 	<div
 		aria-hidden="true"
-		class="relative z-10 mt-4 flex items-center text-sm font-medium text-indigo-500"
+		class="relative z-10 mt-4 flex items-center text-sm font-medium text-emerald-500"
 	>
 		Read note<svg
 			viewBox="0 0 16 16"

@@ -1,3 +1,112 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+
+/* mozilla-headline-regular - latin */
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Mozilla Headline';
+	font-style: normal;
+	font-weight: 400;
+	src: url('/fonts/mozilla-headline-v1-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* mozilla-headline-600 - latin */
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Mozilla Headline';
+	font-style: normal;
+	font-weight: 600;
+	src: url('/fonts/mozilla-headline-v1-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* mozilla-text-200 - latin */
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Mozilla Text';
+	font-style: normal;
+	font-weight: 200;
+	src: url('/fonts/mozilla-text-v1-latin-200.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* mozilla-text-regular - latin */
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Mozilla Text';
+	font-style: normal;
+	font-weight: 400;
+	src: url('/fonts/mozilla-text-v1-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* mozilla-text-600 - latin */
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Mozilla Text';
+	font-style: normal;
+	font-weight: 600;
+	src: url('/fonts/mozilla-text-v1-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* intel-one-mono-regular - latin */
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'IBM Plex Mono';
+	font-style: normal;
+	font-weight: 400;
+	src: url('/fonts/ibm-plex-mono-v19-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+@theme {
+	--font-display: 'Mozilla Headline', sans-serif;
+	--font-sans: 'Mozilla Text', sans-serif;
+	--font-mono: 'IBM Plex Mono', monospace;
+}
+
+h1 {
+	@apply font-display font-semibold;
+}
+
+h2 {
+	@apply font-display font-normal;
+}
+
+p,
+span,
+li,
+a,
+button,
+input,
+textarea {
+	@apply font-sans;
+}
+
+language-bash,
+language-sql,
+language-javascript,
+language-json,
+language-html,
+language-css,
+language-markdown,
+language-yaml,
+language-toml,
+language-python,
+language-rust,
+language-c,
+language-cpp,
+language-csharp,
+language-java,
+language-kotlin,
+language-go,
+language-ruby,
+language-swift,
+language-typescript,
+language-php,
+language-perl,
+language-shell,
+language-dockerfile,
+language-xml,
+language-svg,
+language-graphql,
+language-undefined {
+	@apply font-mono;
+}
