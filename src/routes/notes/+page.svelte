@@ -11,8 +11,8 @@
 		<div class="relative px-4 sm:px-8 lg:px-12">
 			<div class="mx-auto max-w-2xl lg:max-w-5xl">
 				<Hero
-					title="Notes on my Software Development Journey &amp; miscellaneous"
-					description="I enjoy sharing knowledge and insights from my software development journey, including Rust programming, AI integrations, and open-source contributions."
+					title="Notes"
+					description="I write down thoughts and solutions on Software Engineering topics."
 				/>
 				<div class="mt-16 sm:mt-20">
 					<div class="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">

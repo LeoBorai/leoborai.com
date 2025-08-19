@@ -49,8 +49,8 @@
 						</div>
 					</div>
 					<Hero
-						title="Rust Software Developer doing AI Engineering &amp; Open-Source"
-						description="I’m a software developer focused on Rust programming, AI integrations, and open-source projects. I enjoy building efficient and scalable systems that leverage the power of Rust and AI technologies."
+						title="I'm Leo Borai a Software Developer"
+						description="Doing Software Development since 2017. Experience in Web Development, Systems Programming and now learning AI Engineering."
 					/>
 					<SocialNetworks />
 				</div>
