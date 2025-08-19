@@ -34,7 +34,7 @@ models.
 
 The following diagram shows some of the entities involved:
 
-![Entities Diagram](/images/notes/007-entities.png)
+![Entities Diagram](/notes/images/007-entities.png)
 
 ## About the Codebase
 
@@ -63,7 +63,7 @@ library.
 
 ## Talk is cheap, show me the code
 
-![Linus Torvads](/images/notes/007-linus-torvads.jpg)
+![Linus Torvads](/notes/images/007-linus-torvads.jpg)
 
 Just as Linus Torvads said, it's easy to speak but its also important to
 encourage yourself to do things.

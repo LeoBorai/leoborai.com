@@ -42,7 +42,7 @@ the `Quit Rancher Desktop` option.
 After making sure we dont have more Docker Containers running, we are good to
 go and its time to delete the application from the `~/Applications` directory.
 
-![Move Application to Trash](/images/notes/010-applications.png)
+![Move Application to Trash](/notes/images/010-applications.png)
 
 After deleting the Application Package, you will also want to delete remaining
 files, most macOS applications store files in other system directories, such as
@@ -68,20 +68,20 @@ find: ~/Library/Application Support/Knowledge: Operation not permitted
 Instead you can use `open ~/Library` and navigate from there using the macOS
 Finder.
 
-![Application Support](/images/notes/010-app-support.png)
+![Application Support](/notes/images/010-app-support.png)
 
 Also check for the `Caches` directory under `~/Library/Application Support/Caches`
 
-![Caches](/images/notes/010-app-support-caches.png)
+![Caches](/notes/images/010-app-support-caches.png)
 
 Another directory you should clean is `~/Library/Preferences`, there you will
 find a directory and a `plist` file.
 
-![Preferences](/images/notes/010-preferences.png)
+![Preferences](/notes/images/010-preferences.png)
 
 Logs is another place to search as well.
 
-![Logs](/images/notes/010-logs.png)
+![Logs](/notes/images/010-logs.png)
 
 ## Enter OrbStack
 
@@ -96,7 +96,7 @@ And here is when the fun begins, OrbStack will allow you to spin up Linux
 Machines or Docker. But the great thing is that you can do both and you won't
 need a Linux machine to run containers!
 
-![OrbStack Linux](/images/notes/010-orbstack-linux.png)
+![OrbStack Linux](/notes/images/010-orbstack-linux.png)
 
 > Back in Rancher Desktop, I had a [QEMU][2] instance running, eating 40%-60% of
 > my CPU, sometimes just to spin up a PostgreSQL instance.
@@ -104,7 +104,7 @@ need a Linux machine to run containers!
 You can list running containers and manage Linux VMs just by clicking a couple
 buttons, its super fast and easy to use, that without mentioning the native macOS GUI.
 
-![OrbStack Home](/images/notes/010-orbstack-home.png)
+![OrbStack Home](/notes/images/010-orbstack-home.png)
 
 [1]: https://docs.orbstack.dev/quick-start
 [2]: https://www.qemu.org

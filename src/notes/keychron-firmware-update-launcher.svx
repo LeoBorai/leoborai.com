@@ -28,12 +28,12 @@ Plug your keyboard using the included USB-C wire, and open the Keychron Launcher
 Then click on the "Connect +" button on the top-left corner of the window, and select your keyboard
 from the pop-up menu.
 
-![](/assets/notes/images/keychron-firmware-update-launcher/01-connecting.gif)
+![](/notes/images/keychron-firmware-update-launcher/01-connecting.gif)
 
 Once the keyboard is connected, you will see a map of your keyboard and some options on the left
 navigation bar.
 
-![](/assets/notes/images/keychron-firmware-update-launcher/02-firmware-update.gif)
+![](/notes/images/keychron-firmware-update-launcher/02-firmware-update.gif)
 
 Perform the firmware update by clicking on the "Firmware Update" option on the left navigation bar,
 the current version and the most recent version will be displayed.
@@ -52,20 +52,20 @@ For the Keychron K3 Max, you will need to:
 
 For reference, here is an screenshot on the original instructions:
 
-![Bootloader Mode](/assets/notes/images/keychron-firmware-update-launcher/instructions.png)
+![Bootloader Mode](/notes/images/keychron-firmware-update-launcher/instructions.png)
 
 The `Flash Firmware` button will be enabled now, click on it to start the update process.
 
 > While the Firmware is being _Flashed_, do not use the keyboard nor disconnect it from the computer.
 
-![](/assets/notes/images/keychron-firmware-update-launcher/03-firmware-transfer.gif)
+![](/notes/images/keychron-firmware-update-launcher/03-firmware-transfer.gif)
 
 ## Updating the Wireless Firmware
 
 Both the 2.4 GHz and Bluetooth firmware can be updated using the Keychron Launcher.
 A different option is available on the left navigation bar, just click on the "Wireless Firmware".
 
-![](/assets/notes/images/keychron-firmware-update-launcher/04-wireless-firmware.gif)
+![](/notes/images/keychron-firmware-update-launcher/04-wireless-firmware.gif)
 
 Flashing the wireless firmware is much more straightforward, just click on the `Next` button and
 then on the `Flash Firmware` button.
@@ -73,4 +73,4 @@ then on the `Flash Firmware` button.
 Once ready a summary is printed, both fields: `Current version` and `Latest version` should
 be the same.
 
-![](/assets/notes/images/keychron-firmware-update-launcher/05-post-upgrade.png)
+![](/notes/images/keychron-firmware-update-launcher/05-post-upgrade.png)

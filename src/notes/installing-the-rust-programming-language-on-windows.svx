@@ -41,18 +41,18 @@ Is important to mention that advanced users taergeting the GNU ABI or doing a di
 setup may not need to have the C++ Build Tools installed in their systems as pointed out
 by the Rustup binary:
 
-![Screenshot from https://www.rust-lang.org/tools/install](/images/notes/001-install-rust-binary.png)
+![Screenshot from https://www.rust-lang.org/tools/install](/notes/images/001-install-rust-binary.png)
 
 In order to have C++ Build Tools installed, visit the [Visual C++ Build Tools website](https://visualstudio.microsoft.com/visual-cpp-build-tools/) to download and install it.
 
 Once Visual Studio Installer is ready, choose the "Desktop development with C++" workload.
 
-![Visual Studio Installer with the C++ Workload Selected](/images/notes/001-vs-installer.png)
+![Visual Studio Installer with the C++ Workload Selected](/notes/images/001-vs-installer.png)
 
 Visual Studio Build Tools will be downloaded and installed in your system, this may take
 some minutes.
 
-![Visual Studio Installer with the C++ Workload Selected](/images/notes/001-vs-build-tools-installation.png)
+![Visual Studio Installer with the C++ Workload Selected](/notes/images/001-vs-build-tools-installation.png)
 
 When Visual Studio installer have finished installing the C++ Build Tools, you will be
 ready to install Rust!
@@ -60,7 +60,7 @@ ready to install Rust!
 Go to the official [Rust Install](https://www.rust-lang.org/tools/install) website, and
 download the executable for your architecture.
 
-![Rust Install Website](/images/notes/001-install-rust-website.png)
+![Rust Install Website](/notes/images/001-install-rust-website.png)
 
 Execute the binary, you must see the following output:
 
