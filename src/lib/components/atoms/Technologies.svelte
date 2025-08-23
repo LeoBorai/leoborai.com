@@ -7,16 +7,28 @@
 			note: 'Claude Code CLI for code generation on a "human-in-the-loop" basis.'
 		},
 		{
-			name: 'Git',
-			logo: '/img/techstack/git.png',
-			bgColor: '#FFFFFF',
-			note: 'Preferred VCS, used on both personal and professional projects.'
+			name: 'GCP',
+			logo: '/img/techstack/gcp.png',
+			bgColor: '#fff',
+			note: 'Hosting SQL Databases and Cloud Run Applications.'
+		},
+		{
+			name: 'Fly.io',
+			logo: '/img/techstack/flyio.png',
+			bgColor: '#fff',
+			note: 'Hosting applications and databases, including PostgreSQL intances and Rust Apps.'
 		},
 		{
 			name: 'Docker',
 			logo: '/img/techstack/docker.png',
 			bgColor: '#fff',
 			note: 'Containerization for development and deployment, including Docker Compose.'
+		},
+		{
+			name: 'Git',
+			logo: '/img/techstack/git.png',
+			bgColor: '#FFFFFF',
+			note: 'Preferred VCS, used on both personal and professional projects.'
 		}
 	];
 </script>

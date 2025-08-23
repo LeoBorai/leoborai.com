@@ -2,6 +2,7 @@
 	import Frameworks from '$lib/components/atoms/Frameworks.svelte';
 	import Hero from '$lib/components/atoms/Hero.svelte';
 	import LanguageSkills from '$lib/components/atoms/LanguageSkills.svelte';
+	import Miscellaneous from '$lib/components/atoms/Miscellaneous.svelte';
 	import NoteEntry from '$lib/components/atoms/NoteEntry.svelte';
 	import ProgrammingLanguages from '$lib/components/atoms/ProgrammingLanguages.svelte';
 	import SocialNetworks from '$lib/components/atoms/SocialNetworks.svelte';
@@ -52,7 +53,10 @@
 						title="I'm Leo Borai a Software Developer"
 						description="Doing Software Development since 2017. Experience in Web Development, Systems Programming and now learning AI Engineering."
 					/>
-					<SocialNetworks />
+					<div class="flex items-center justify-start gap-8">
+						<SocialNetworks />
+						<Miscellaneous />
+					</div>
 				</div>
 			</div>
 		</div>

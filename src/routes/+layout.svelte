@@ -1,10 +1,14 @@
 <script lang="ts">
 	import Footer from '$lib/components/atoms/Footer.svelte';
 	import Navigation from '$lib/components/atoms/Navigation.svelte';
+	import ThemeToggle from '$lib/components/atoms/ThemeToggle.svelte';
+	import uiStore from '$lib/stores/uiStore';
 
 	import '../app.css';
 
 	let { children } = $props();
+
+	uiStore.syncPreferredScheme();
 </script>
 
 <svelte:head>
@@ -67,7 +71,7 @@
 									</div>
 									<div class="flex justify-end md:flex-1">
 										<div class="pointer-events-auto">
-											<!-- <ThemeToggle /> -->
+											<ThemeToggle />
 										</div>
 									</div>
 								</div>

@@ -7,7 +7,7 @@
 		},
 		{
 			name: 'English',
-			level: 'Fluent',
+			level: 'C1 Advanced',
 			flag: '/img/languages/usa.png'
 		},
 		{

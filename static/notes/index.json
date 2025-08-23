@@ -1,6 +1,24 @@
 [
   {
     "meta": {
+      "title": "Sandbox Claude Code with Docker",
+      "description": "\"Sandbox\" Claude Code using Docker for easy setup and isolation from your host system environment.",
+      "icon": "rust",
+      "date": "2025-08-22",
+      "preview_image_url": "https://images.unsplash.com/photo-1506322526487-d8a94af63688?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=640",
+      "published": true,
+      "categories": [
+        "ai",
+        "claude",
+        "copilot",
+        "agents",
+        "docker"
+      ]
+    },
+    "slug": "sandbox-claude-code"
+  },
+  {
+    "meta": {
       "title": "You can ask AI about People",
       "description": "LLMs can also be interpreted as databases, which you can query using natural language.",
       "icon": "rust",
