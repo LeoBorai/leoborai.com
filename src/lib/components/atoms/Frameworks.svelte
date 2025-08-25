@@ -2,10 +2,26 @@
 	const FRAMEWORKS = [
 		{
 			name: 'Svelte/Kit',
-			since: 2020,
+			since: 2021,
 			logo: '/img/techstack/sveltekit.png',
 			bgColor: '#FFFFFF',
 			note: 'Web Applications with SveletKit running on Cloudflare Workers',
+			isFullStack: true
+		},
+		{
+			name: 'NextJS',
+			since: 2019,
+			logo: '/img/techstack/next.png',
+			bgColor: '#FFFFFF',
+			note: 'Full-Stack Web Applications with NextJS (ReactJS SSR/SSG Framework)',
+			isFullStack: true
+		},
+		{
+			name: 'EmberJS',
+			since: 2018,
+			logo: '/img/techstack/emberjs.png',
+			bgColor: '#FFFFFF',
+			note: 'Develop Web Applications with EmbjerJS using Ember Data and Ember CLI',
 			isFullStack: true
 		},
 		{

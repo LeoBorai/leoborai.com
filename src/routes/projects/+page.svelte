@@ -31,6 +31,28 @@
 				'Rust crate to get network interface information such as IP addresses, MAC addresses, and more.',
 			image: '/img/techstack/rust.png',
 			bgColor: '#fff'
+		},
+		{
+			name: 'Svelte Forms',
+			url: new URL('https://github.com/whizzes/svelte-forms'),
+			description: 'Formik inspired form library for Svelte and SvelteKit.',
+			image: '/img/techstack/sveltekit.png',
+			bgColor: '#fff'
+		},
+		{
+			name: 'Pxid',
+			url: new URL('https://github.com/whizzes/pxid'),
+			description:
+				'Stripe IDs inspired extension of XID (Globally Unique Identifiers) which supports prefixes and is stored in 16 bytes',
+			image: '/img/techstack/rust.png',
+			bgColor: '#fff'
+		},
+		{
+			name: 'ImageKit Client for Rust',
+			url: new URL('https://github.com/whizzes/imagekit'),
+			description: 'Rust API Client for ImageKit.io a file storage and image processing service',
+			image: '/img/techstack/rust.png',
+			bgColor: '#fff'
 		}
 	];
 </script>

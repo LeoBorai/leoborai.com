@@ -1,3 +1,4 @@
+import { saveConfig } from '$lib/utils/config';
 import { writable, type Readable } from 'svelte/store';
 
 const PREFERS_COLOR_SCHEME_DARK_MEDIA_QUERY = '(prefers-color-scheme: dark)';
@@ -5,7 +6,7 @@ const PREFERS_COLOR_SCHEME_DARK_MEDIA_QUERY = '(prefers-color-scheme: dark)';
 export type UIStoreMethods = {
 	setDarkColorScheme(): void;
 	setLightColorScheme(): void;
-	syncPreferredScheme(): void;
+	syncPreferredScheme(prefer?: string): void;
 };
 
 export enum ColorScheme {
@@ -22,18 +23,12 @@ export type UIStore = {
  */
 export function getPreferredScheme(): ColorScheme {
 	if (typeof window !== 'undefined') {
-		const cached = localStorage.getItem('preferredColorScheme');
-
-		if (cached) {
-			return cached === ColorScheme.Dark ? ColorScheme.Dark : ColorScheme.Light;
-		}
-
 		return window?.matchMedia?.(PREFERS_COLOR_SCHEME_DARK_MEDIA_QUERY)?.matches
 			? ColorScheme.Dark
 			: ColorScheme.Light;
 	}
 
-	return ColorScheme.Light;
+	return ColorScheme.Dark;
 }
 
 export function createUIStore() {
@@ -42,7 +37,17 @@ export function createUIStore() {
 		colorScheme: getPreferredScheme()
 	});
 
-	const syncPreferredScheme = () => {
+	const syncPreferredScheme = (prefer: string | undefined) => {
+		if (prefer === ColorScheme.Dark) {
+			setDarkColorScheme();
+			return;
+		}
+
+		if (prefer === ColorScheme.Light) {
+			setLightColorScheme();
+			return;
+		}
+
 		const preferredScheme = getPreferredScheme();
 
 		if (preferredScheme === ColorScheme.Dark) {
@@ -55,7 +60,10 @@ export function createUIStore() {
 	const setDarkColorScheme = () => {
 		if (typeof document !== 'undefined') {
 			document.documentElement.classList.add('dark');
-			localStorage.setItem('preferredColorScheme', ColorScheme.Dark);
+
+			saveConfig({
+				theme: ColorScheme.Dark
+			});
 
 			update((current) => ({
 				...current,
@@ -67,7 +75,10 @@ export function createUIStore() {
 	const setLightColorScheme = () => {
 		if (typeof document !== 'undefined') {
 			document.documentElement.classList.remove('dark');
-			localStorage.setItem('preferredColorScheme', ColorScheme.Light);
+
+			saveConfig({
+				theme: ColorScheme.Light
+			});
 
 			update((current) => ({
 				...current,

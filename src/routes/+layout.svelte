@@ -6,9 +6,9 @@
 
 	import '../app.css';
 
-	let { children } = $props();
+	let { children, data } = $props();
 
-	uiStore.syncPreferredScheme();
+	uiStore.syncPreferredScheme(data.prefersColorScheme);
 </script>
 
 <svelte:head>
