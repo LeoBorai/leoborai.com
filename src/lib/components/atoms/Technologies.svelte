@@ -19,6 +19,12 @@
 			note: 'Hosting applications and databases, including PostgreSQL intances and Rust Apps.'
 		},
 		{
+			name: 'Cloudflare',
+			logo: '/img/techstack/cloudflare.png',
+			bgColor: '#fff',
+			note: 'Setup Cloudflare Pages and Workers instances using "workers-rs" and Frontend frameworks.'
+		},
+		{
 			name: 'Docker',
 			logo: '/img/techstack/docker.png',
 			bgColor: '#fff',
