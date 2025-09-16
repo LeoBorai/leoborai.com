@@ -1,8 +1,26 @@
 [
   {
     "meta": {
+      "title": "Run Claude in Docker for AI-Assisted Development",
+      "description": "A Docker Image with Claude Code installed for Development purposes",
+      "icon": "docker",
+      "date": "2025-09-15",
+      "preview_image_url": "https://images.unsplash.com/photo-1590658093848-f6f0df47b853?q=80&w=1031&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "published": true,
+      "categories": [
+        "ai",
+        "claude",
+        "docker",
+        "security",
+        "copilot"
+      ]
+    },
+    "slug": "docker-claude"
+  },
+  {
+    "meta": {
       "title": "Sandbox Claude Code with Docker",
-      "description": "\"Sandbox\" Claude Code using Docker for easy setup and isolation from your host system environment.",
+      "description": "\"Sandbox\" Claude Code using Docker to secure your host system from prompt injection and arbitrary bash commands.",
       "icon": "rust",
       "date": "2025-08-22",
       "preview_image_url": "https://images.unsplash.com/photo-1506322526487-d8a94af63688?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=640",
