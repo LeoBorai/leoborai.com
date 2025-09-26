@@ -1,6 +1,22 @@
 [
   {
     "meta": {
+      "title": "Use Zed as IDE for Java on macOS",
+      "description": "How I setup Java environment on macOS to use Zed as my main IDE.",
+      "icon": "rust",
+      "date": "2025-09-27",
+      "preview_image_url": "https://images.unsplash.com/photo-1506322526487-d8a94af63688?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=640",
+      "published": true,
+      "categories": [
+        "java",
+        "zed",
+        "macos"
+      ]
+    },
+    "slug": "use-zed-as-ide-for-java-on-macos"
+  },
+  {
+    "meta": {
       "title": "Run Claude in Docker for AI-Assisted Development",
       "description": "A Docker Image with Claude Code installed for Development purposes",
       "icon": "docker",
