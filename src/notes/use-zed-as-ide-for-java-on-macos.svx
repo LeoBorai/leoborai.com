@@ -8,8 +8,6 @@ preview_image_url: "https://images.unsplash.com/photo-1506322526487-d8a94af63688
 published: true
 ---
 
-# Use Zed as IDE for Java on macOS
-
 I have been using Zed for a long time now, I love how performant and extensible it is
 as a IDE. Most of the code I write nowadays is Rust, then I also write TypeScript and
 Svelte.
