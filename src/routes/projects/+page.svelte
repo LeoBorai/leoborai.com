@@ -33,6 +33,14 @@
 			bgColor: '#fff'
 		},
 		{
+			name: 'cargo tag',
+			url: new URL('https://github.com/LeoBorai/cargo-tag'),
+			description:
+				'Cargo plugin to manage and apply tags to Rust projects, making versioning and releases easier.',
+			image: '/img/techstack/rust.png',
+			bgColor: '#fff'
+		},
+		{
 			name: 'Svelte Forms',
 			url: new URL('https://github.com/whizzes/svelte-forms'),
 			description: 'Formik inspired form library for Svelte and SvelteKit.',
