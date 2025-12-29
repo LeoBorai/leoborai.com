@@ -83,12 +83,10 @@
 						{/each}
 					</div>
 					<div class="space-y-10 lg:pl-16 xl:pl-24">
-						<!-- <Newsletter /> -->
 						<ProgrammingLanguages />
 						<Frameworks />
 						<Technologies />
 						<LanguageSkills />
-						<!-- <Experience /> -->
 					</div>
 				</div>
 			</div>

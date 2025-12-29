@@ -46,29 +46,11 @@
 				href="/projects">Projects</a
 			>
 		</li>
-		<!-- <li>
-			<a
-				class="relative block px-3 py-2 transition hover:text-emerald-500 dark:hover:text-emerald-400"
-				href="/articles">Articles</a
-			>
-		</li>
-		<li>
-			<a
-				class="relative block px-3 py-2 transition hover:text-emerald-500 dark:hover:text-emerald-400"
-				href="/projects">Projects</a
-			>
-		</li>
-		<li>
-			<a
-				class="relative block px-3 py-2 transition hover:text-emerald-500 dark:hover:text-emerald-400"
-				href="/speaking">Speaking</a
-			>
-		</li>
 		<li>
 			<a
 				class="relative block px-3 py-2 transition hover:text-emerald-500 dark:hover:text-emerald-400"
 				href="/uses">Uses</a
 			>
-		</li> -->
+		</li>
 	</ul>
 </nav>
