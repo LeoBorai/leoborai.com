@@ -3,7 +3,6 @@
 	import Hero from '$lib/components/atoms/Hero.svelte';
 	import LanguageSkills from '$lib/components/atoms/LanguageSkills.svelte';
 	import Miscellaneous from '$lib/components/atoms/Miscellaneous.svelte';
-	import Newsletter from '$lib/components/atoms/Newsletter.svelte';
 	import NoteEntry from '$lib/components/atoms/NoteEntry.svelte';
 	import ProgrammingLanguages from '$lib/components/atoms/ProgrammingLanguages.svelte';
 	import SocialNetworks from '$lib/components/atoms/SocialNetworks.svelte';
