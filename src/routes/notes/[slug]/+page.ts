@@ -8,7 +8,7 @@ export async function load({ params: { slug } }) {
 			metadata: post.metadata,
 			content: post.default
 		};
-	} catch (error) {
+	} catch {
 		// Failed to find the requested language, try to find a fallback language
 	}
 
