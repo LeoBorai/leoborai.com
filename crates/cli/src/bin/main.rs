@@ -5,6 +5,7 @@ use clap::Parser;
 use dotenv::dotenv;
 
 use libcli::notes_index::NotesIndex;
+use libcli::skills_index::SkillsIndex;
 
 #[tokio::main]
 async fn main() {
@@ -22,6 +23,8 @@ async fn main() {
 pub enum Cli {
     /// Creates the Notes Entry Index
     Notes,
+    /// Creates the Skills Entry Index
+    Skills,
 }
 
 impl Cli {
@@ -30,6 +33,11 @@ impl Cli {
             Self::Notes => {
                 let index_path = current_dir()?.join("static").join("notes");
                 let index = NotesIndex::new()?;
+                index.save_to_file(index_path)?;
+            }
+            Self::Skills => {
+                let index_path = current_dir()?.join("static").join("skills");
+                let index = SkillsIndex::new()?;
                 index.save_to_file(index_path)?;
             }
         }

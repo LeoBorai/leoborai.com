@@ -43,6 +43,12 @@
 		<li>
 			<a
 				class="relative block px-3 py-2 transition hover:text-emerald-500 dark:hover:text-emerald-400"
+				href="/skills">Skills</a
+			>
+		</li>
+		<li>
+			<a
+				class="relative block px-3 py-2 transition hover:text-emerald-500 dark:hover:text-emerald-400"
 				href="/projects">Projects</a
 			>
 		</li>

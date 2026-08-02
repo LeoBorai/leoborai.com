@@ -22,6 +22,14 @@ declare global {
 			};
 			slug: string;
 		};
+
+		type Skill = {
+			meta: {
+				name: string;
+				description: string;
+			};
+			slug: string;
+		};
 	}
 }
 

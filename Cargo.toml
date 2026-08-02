@@ -3,6 +3,7 @@ default-members = ["crates/cli"]
 members = [
     "crates/cli",
     "crates/notes",
+    "crates/skills",
 ]
 
 resolver = "3"

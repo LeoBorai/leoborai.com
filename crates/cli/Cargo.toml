@@ -28,3 +28,4 @@ tracing-subscriber = { workspace = true }
 
 # Local
 notes = { path = "../notes" }
+skills = { path = "../skills" }

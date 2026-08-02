@@ -1,0 +1,17 @@
+[package]
+name = "skills"
+version = "0.1.0"
+edition = "2024"
+authors = ["Leo Borai <estebanborai@gmail.com>"]
+
+[lib]
+name = "skills"
+path = "src/lib.rs"
+
+[dependencies]
+thiserror = "1.0.48"
+yaml-front-matter = "0.1.0"
+
+# Workspace Dependencies
+serde = { workspace = true }
+serde_json = { workspace = true }

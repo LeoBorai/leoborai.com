@@ -1,0 +1,9 @@
+[
+  {
+    "meta": {
+      "name": "bevy-ecs-expert",
+      "description": "Write idiomatic, high-performance Bevy 0.19 ECS code in Rust: components, required components, BSN scenes, queries, systems, resources-as-components, observers and messages, relationships, scheduling, and parallelism. Use this skill whenever the user mentions Bevy, `bevy_ecs`, ECS architecture in Rust, or is writing game logic with entities/components/systems — and especially when porting code from Bevy 0.14–0.18, since nearly every ECS API was renamed across those releases."
+    },
+    "slug": "bevy-ecs-expert"
+  }
+]
