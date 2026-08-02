@@ -1,4 +1,6 @@
 <script lang="ts">
+	import CopyMarkdownButton from '$lib/components/atoms/CopyMarkdownButton.svelte';
+
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -33,11 +35,16 @@
 						</a>
 						<article>
 							<header class="flex flex-col">
-								<h1
-									class="mt-6 text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100"
-								>
-									{data.metadata.name}
-								</h1>
+								<div class="flex items-start justify-between gap-4">
+									<h1
+										class="mt-6 text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100"
+									>
+										{data.metadata.name}
+									</h1>
+									<div class="mt-6 flex-none">
+										<CopyMarkdownButton content={data.markdown} />
+									</div>
+								</div>
 								<p class="order-first flex items-center text-base text-zinc-400 dark:text-zinc-500">
 									{data.metadata.description}
 								</p>
