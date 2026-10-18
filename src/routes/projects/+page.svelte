@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Hero from '$lib/components/atoms/Hero.svelte';
+	import Hero from '#lib/components/atoms/Hero.svelte';
 
 	const PROJECTS = [
 		{

@@ -15,4 +15,4 @@ dkc:
 
 # Perform formatting and linting
 fmt:
-    bun run format
+    npm run format

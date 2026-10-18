@@ -1,5 +1,5 @@
 <script lang="ts">
-	import uiStore, { ColorScheme } from '$lib/stores/uiStore';
+	import uiStore, { ColorScheme } from '#lib/stores/uiStore.ts';
 </script>
 
 <button

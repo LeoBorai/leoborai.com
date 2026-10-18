@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { onMount } from 'svelte';
 
 	let description = 'An unexpected error occurred. Please try again later.';
 
 	onMount(() => {
-		if ($page.data && $page.data.error) {
-			description = $page.data.error.message || description;
+		if (page.data && page.data.error) {
+			description = page.data.error.message || description;
 		}
 	});
 </script>
@@ -20,7 +20,7 @@
 						<h1
 							class="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100"
 						>
-							{$page.error?.message}
+							{page.error?.message}
 						</h1>
 						<p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
 							{description}

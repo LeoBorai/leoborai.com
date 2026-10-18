@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Footer from '$lib/components/atoms/Footer.svelte';
-	import Navigation from '$lib/components/atoms/Navigation.svelte';
-	import ThemeToggle from '$lib/components/atoms/ThemeToggle.svelte';
-	import uiStore from '$lib/stores/uiStore';
+	import Footer from '#lib/components/atoms/Footer.svelte';
+	import Navigation from '#lib/components/atoms/Navigation.svelte';
+	import ThemeToggle from '#lib/components/atoms/ThemeToggle.svelte';
+	import uiStore from '#lib/stores/uiStore.ts';
 
 	import '../app.css';
 

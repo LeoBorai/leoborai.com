@@ -4,20 +4,20 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-Leo Borai's personal website/blog: a SvelteKit 5 app deployed to Cloudflare Pages, plus a small Rust workspace whose CLI generates the static blog-post index consumed by the frontend at runtime. The two halves (`src/`, `crates/`) are coupled only through the generated `static/notes/index.json` file — there is no shared build step that wires them together automatically.
+Leo Borai's personal website/blog: a SvelteKit 3 (Svelte 5) app deployed to Cloudflare Pages, plus a small Rust workspace whose CLI generates the static blog-post index consumed by the frontend at runtime. The two halves (`src/`, `crates/`) are coupled only through the generated `static/notes/index.json` file — there is no shared build step that wires them together automatically.
 
 ## Commands
 
-Package manager is **bun** (see `bun.lock`, CI uses `bun i`). `.npmrc` sets `engine-strict=true`.
+Package manager is **npm** (see `package-lock.json`, CI uses `npm ci`). Node >=22.17 is required (`engines`). `.npmrc` sets `engine-strict=true`.
 
 ```bash
-bun run dev          # start dev server
-bun run build        # production build (adapter-cloudflare -> .svelte-kit/cloudflare)
-bun run preview      # preview the production build
-bun run check        # svelte-kit sync + svelte-check (type checking)
-bun run check:watch  # same, watch mode
-bun run lint         # prettier --check . && eslint .
-bun run format       # prettier --write .  (also `just fmt`)
+npm run dev          # start dev server
+npm run build        # production build (adapter-cloudflare -> .svelte-kit/cloudflare)
+npm run preview      # preview the production build
+npm run check        # svelte-kit sync + svelte-check (type checking)
+npm run check:watch  # same, watch mode
+npm run lint         # prettier --check . && eslint .
+npm run format       # prettier --write .  (also `just fmt`)
 ```
 
 Rust workspace (default member `crates/cli`):
@@ -32,9 +32,17 @@ There is no test suite in either half of the repo (no `#[test]` in the Rust crat
 `Justfile`:
 
 - `just dkc` — pulls and runs `ghcr.io/leoborai/dkc:latest`, mounting the repo at `/app` (dev container).
-- `just fmt` — runs `bun run format`.
+- `just fmt` — runs `npm run format`.
 
 ## Architecture
+
+### SvelteKit 3 specifics
+
+- No `svelte.config.js`: Svelte/Kit config (preprocessors, extensions, adapter) is passed to `sveltekit(...)` in `vite.config.ts`, flat (no `kit` namespace).
+- `$lib` is replaced by `#lib` (package.json `imports`); TS imports need explicit extensions (`#lib/stores/uiStore.ts`).
+- Private env vars are declared in `src/env.ts` (`defineEnvVars`) and imported from `$app/env/private`.
+- `tsconfig.json` extends `$app/tsconfig`; use `$app/state` instead of `$app/stores`.
+- `overrides` pins `postcss-selector-parser` to fix an `npm audit` finding from `@tailwindcss/typography`; drop it once upstream updates.
 
 ### Notes/blog pipeline
 
@@ -55,7 +63,7 @@ Theme preference flows through a `config` cookie, not localStorage:
 
 ### Resume request endpoint
 
-`src/routes/api/v0/resume/+server.ts` POSTs a Telegram message (via the Telegram Bot API) whenever a resume is requested, using `TELEGRAM_BOT`/`TELEGRAM_CHAT` env vars (`$env/static/private`). These plus `GH_API_TOKEN` and `VERSION` are injected at build/deploy time in CI, not read from a local `.env` for production builds.
+`src/routes/api/v0/resume/+server.ts` POSTs a Telegram message (via the Telegram Bot API) whenever a resume is requested, using `TELEGRAM_BOT`/`TELEGRAM_CHAT` env vars (`$app/env/private`, declared in `src/env.ts`). These plus `GH_API_TOKEN` and `VERSION` are injected at build/deploy time in CI, not read from a local `.env` for production builds.
 
 ### Components
 
@@ -63,14 +71,16 @@ Theme preference flows through a `config` cookie, not localStorage:
 
 ## Deployment
 
-Two GitHub Actions workflows (`.github/workflows/`), both: `bun i` → `bun run build` → `wrangler pages deploy ./.svelte-kit/cloudflare` via `cloudflare/wrangler-action`.
+Two GitHub Actions workflows (`.github/workflows/`), both: `npm ci` → `npm run build` → `wrangler pages deploy ./.svelte-kit/cloudflare` via `cloudflare/wrangler-action`.
 
 - `deploy-staging.yml`: triggers on push to `main`, deploys to the staging Cloudflare Pages project, `NODE_ENV=development`.
 - `deploy.yml`: triggers on `v*` tags, deploys to the production Cloudflare Pages project, `NODE_ENV=production`.
 
-Neither workflow runs the Rust CLI — the notes index committed to `static/notes/index.json` must already be up to date before tagging/pushing.
+- `audit.yml`: runs `npm audit --audit-level=moderate` and `npm audit signatures` on pull requests, pushes to `main`, and weekly (Mondays 06:00 UTC).
+
+Neither deploy workflow runs the Rust CLI — the notes index committed to `static/notes/index.json` must already be up to date before tagging/pushing.
 
 ## Style
 
-- Formatting is enforced by Prettier (`useTabs`, single quotes, no trailing commas, 100 print width) with `prettier-plugin-svelte` and `prettier-plugin-tailwindcss` — run `bun run format` rather than hand-formatting.
+- Formatting is enforced by Prettier (`useTabs`, single quotes, no trailing commas, 100 print width) with `prettier-plugin-svelte` and `prettier-plugin-tailwindcss` — run `npm run format` rather than hand-formatting.
 - TypeScript strict mode is on; ESLint extends `typescript-eslint` recommended + `eslint-plugin-svelte` recommended, with Prettier conflict rules disabled.

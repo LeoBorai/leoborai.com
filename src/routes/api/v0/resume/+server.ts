@@ -1,4 +1,4 @@
-import { TELEGRAM_BOT, TELEGRAM_CHAT } from '$env/static/private';
+import { TELEGRAM_BOT, TELEGRAM_CHAT } from '$app/env/private';
 
 export async function POST({ fetch, request }) {
 	const API_URL = new URL(`https://api.telegram.org/bot${TELEGRAM_BOT}/sendMessage`);
@@ -17,4 +17,6 @@ export async function POST({ fetch, request }) {
 			parse_mode: 'HTML'
 		})
 	});
+
+	return new Response(null, { status: 204 });
 }

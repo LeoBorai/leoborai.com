@@ -27,7 +27,7 @@
 					type="email"
 					placeholder="Email address"
 					aria-label="Email address"
-					required=""
+					required
 					class="w-full appearance-none rounded-[calc(var(--radius-md)-1px)] bg-white px-3 py-[calc(--spacing(2)-1px)] shadow-md shadow-zinc-800/5 outline outline-zinc-900/10 placeholder:text-zinc-400 focus:ring-4 focus:ring-emerald-500/10 focus:outline-emerald-500 sm:text-sm dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:outline-zinc-700 dark:placeholder:text-zinc-500 dark:focus:ring-emerald-400/10 dark:focus:outline-emerald-400"
 				/></span
 			><button

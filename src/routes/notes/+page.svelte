@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Hero from '$lib/components/atoms/Hero.svelte';
+	import Hero from '#lib/components/atoms/Hero.svelte';
 
 	import type { PageProps } from './$types';
 

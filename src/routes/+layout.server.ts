@@ -1,6 +1,6 @@
-import type { PageServerLoad } from './$types';
+import type { LayoutServerLoad } from './$types';
 
-export const load: PageServerLoad = async ({ cookies, request }) => {
+export const load: LayoutServerLoad = async ({ cookies, request }) => {
 	const config = (cookies.get('config') && JSON.parse(cookies.get('config') as string)) || {};
 	const acceptLanguage = request.headers.get('accept-language') || 'en';
 	const prefersColorScheme =

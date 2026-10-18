@@ -1,4 +1,4 @@
-import { saveConfig } from '$lib/utils/config';
+import { saveConfig } from '#lib/utils/config.ts';
 import { writable, type Readable } from 'svelte/store';
 
 const PREFERS_COLOR_SCHEME_DARK_MEDIA_QUERY = '(prefers-color-scheme: dark)';

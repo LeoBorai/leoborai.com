@@ -1,5 +1,5 @@
 <script lang="ts">
-	import CopyMarkdownButton from '$lib/components/atoms/CopyMarkdownButton.svelte';
+	import CopyMarkdownButton from '#lib/components/atoms/CopyMarkdownButton.svelte';
 
 	import type { PageProps } from './$types';
 
