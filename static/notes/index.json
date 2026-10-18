@@ -1,6 +1,23 @@
 [
   {
     "meta": {
+      "title": "Join Songs and Loop a Video with FFmpeg",
+      "description": "Using FFmpeg to build a endless-like video with music background",
+      "icon": "dev",
+      "date": "2026-10-18",
+      "preview_image_url": "",
+      "published": true,
+      "categories": [
+        "ffmpeg",
+        "audio",
+        "video",
+        "macos"
+      ]
+    },
+    "slug": "loop-music-video-with-ffmpeg"
+  },
+  {
+    "meta": {
       "title": "Use Zed as IDE for Java on macOS",
       "description": "How I setup Java environment on macOS to use Zed as my main IDE.",
       "icon": "rust",

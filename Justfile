@@ -20,3 +20,8 @@ dev:
 # Perform formatting and linting
 fmt:
     npm run format
+
+# Reruns the index binaries
+reindex:
+    cargo r -- notes
+    cargo r -- skills
