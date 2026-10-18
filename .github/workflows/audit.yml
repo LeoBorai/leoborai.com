@@ -1,0 +1,34 @@
+name: Audit
+on:
+  pull_request:
+  push:
+    branches:
+      - 'main'
+  schedule:
+    - cron: '0 6 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    name: npm audit
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Audit Vulnerabilities
+        run: npm audit --audit-level=moderate
+
+      - name: Verify Registry Signatures
+        run: npm audit signatures

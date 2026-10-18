@@ -14,11 +14,15 @@ jobs:
         with:
           ref: 'main'
 
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
+      - name: Install NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          registry-url: https://registry.npmjs.org/
 
       - name: Install Dependencies
-        run: bun i
+        run: npm ci
 
       - name: Build
         env:
@@ -27,13 +31,7 @@ jobs:
           TELEGRAM_BOT: ${{ secrets.TELEGRAM_BOT }}
           TELEGRAM_CHAT: ${{ secrets.TELEGRAM_CHAT }}
           VERSION: ${{ github.ref_name }}
-        run: bun run build
-
-      - name: Install NodeJS
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          registry-url: https://registry.npmjs.org/
+        run: npm run build
 
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
