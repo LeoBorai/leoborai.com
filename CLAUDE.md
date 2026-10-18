@@ -32,6 +32,7 @@ There is no test suite in either half of the repo (no `#[test]` in the Rust crat
 `Justfile`:
 
 - `just dkc` — pulls and runs `ghcr.io/leoborai/dkc:latest`, mounting the repo at `/app` (dev container).
+- `just dev` — runs `npm run dev` with env vars loaded from `.env` (`set dotenv-load`).
 - `just fmt` — runs `npm run format`.
 
 ## Architecture

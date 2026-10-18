@@ -2,6 +2,13 @@
 	import Hero from '#lib/components/atoms/Hero.svelte';
 
 	const PROJECTS = [
+	    {
+			name: 'SealPDF',
+			url: new URL('https://github.com/LeoBorai/SealPDF'),
+			description: 'PDF Digital Signature Tool written in Rust with native Swift UI GUI',
+			image: '/img/projects/sealpdf.png',
+			bgColor: '#fff',
+		},
 		{
 			name: 'Rust HTTP Server',
 			url: new URL('http://http-server-rs.github.io/'),

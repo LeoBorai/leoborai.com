@@ -13,6 +13,10 @@ dkc:
         -w /app \
         ghcr.io/leoborai/dkc:latest
 
+# Runs the dev server with env vars from .env
+dev:
+    npm run dev
+
 # Perform formatting and linting
 fmt:
     npm run format
