@@ -18,6 +18,17 @@ pub struct SkillMetadata {
     pub description: String,
 }
 
+impl SkillMetadata {
+    /// Parses a skill file, returning its metadata and the Markdown body
+    /// (everything after the YAML front matter).
+    pub fn parse_with_body(s: &str) -> Result<(Self, String), Error> {
+        let doc = YamlFrontMatter::parse::<SkillMetadata>(s)
+            .map_err(|err| Error::ParseError(err.to_string()))?;
+
+        Ok((doc.metadata, doc.content))
+    }
+}
+
 impl FromStr for SkillMetadata {
     type Err = Error;
 

@@ -40,6 +40,17 @@ pub struct NoteMetadata {
     pub categories: Vec<String>,
 }
 
+impl NoteMetadata {
+    /// Parses a note file, returning its metadata and the Markdown body
+    /// (everything after the YAML front matter).
+    pub fn parse_with_body(s: &str) -> Result<(Self, String), Error> {
+        let doc = YamlFrontMatter::parse::<NoteMetadata>(s)
+            .map_err(|err| Error::ParseError(err.to_string()))?;
+
+        Ok((doc.metadata, doc.content))
+    }
+}
+
 impl FromStr for NoteMetadata {
     type Err = Error;
 

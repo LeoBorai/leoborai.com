@@ -1,0 +1,65 @@
+[
+ {
+  "name": "SealPDF",
+  "url": "https://github.com/LeoBorai/SealPDF",
+  "description": "PDF Digital Signature Tool written in Rust with native Swift UI GUI",
+  "image": "/img/projects/sealpdf.png",
+  "bgColor": "#fff"
+ },
+ {
+  "name": "Rust HTTP Server",
+  "url": "http://http-server-rs.github.io/",
+  "description": "Building a Safe, Fast, Simple and Configurable HTTP Server Solution in Rust.",
+  "image": "/img/projects/http-server-rs.png",
+  "bgColor": "#fff"
+ },
+ {
+  "name": "Fluvio",
+  "url": "https://fluvio.io/",
+  "description": "Event stream processing solution similar to Kafka, built in Rust.",
+  "image": "/img/projects/fluvio.png",
+  "bgColor": "transparent"
+ },
+ {
+  "name": "Local IP Address Crate",
+  "url": "https://github.com/LeoBorai/local-ip-address",
+  "description": "Rust crate to get the local IP address of the machine using system libaries via FFI on multiple platforms.",
+  "image": "/img/techstack/rust.png",
+  "bgColor": "#fff"
+ },
+ {
+  "name": "Network-Interface Crate",
+  "url": "https://github.com/LeoBorai/network-interface",
+  "description": "Rust crate to get network interface information such as IP addresses, MAC addresses, and more.",
+  "image": "/img/techstack/rust.png",
+  "bgColor": "#fff"
+ },
+ {
+  "name": "cargo tag",
+  "url": "https://github.com/LeoBorai/cargo-tag",
+  "description": "Cargo plugin to manage and apply tags to Rust projects, making versioning and releases easier.",
+  "image": "/img/techstack/rust.png",
+  "bgColor": "#fff"
+ },
+ {
+  "name": "Svelte Forms",
+  "url": "https://github.com/whizzes/svelte-forms",
+  "description": "Formik inspired form library for Svelte and SvelteKit.",
+  "image": "/img/techstack/sveltekit.png",
+  "bgColor": "#fff"
+ },
+ {
+  "name": "Pxid",
+  "url": "https://github.com/whizzes/pxid",
+  "description": "Stripe IDs inspired extension of XID (Globally Unique Identifiers) which supports prefixes and is stored in 16 bytes",
+  "image": "/img/techstack/rust.png",
+  "bgColor": "#fff"
+ },
+ {
+  "name": "ImageKit Client for Rust",
+  "url": "https://github.com/whizzes/imagekit",
+  "description": "Rust API Client for ImageKit.io a file storage and image processing service",
+  "image": "/img/techstack/rust.png",
+  "bgColor": "#fff"
+ }
+]

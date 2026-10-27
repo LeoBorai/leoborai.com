@@ -1,7 +1,7 @@
 [workspace]
-default-members = ["crates/cli"]
+default-members = ["crates/site"]
 members = [
-    "crates/cli",
+    "crates/site",
     "crates/notes",
     "crates/skills",
 ]

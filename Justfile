@@ -1,6 +1,3 @@
-set dotenv-load
-set positional-arguments
-
 # List Tasks
 default:
     just --list
@@ -13,15 +10,22 @@ dkc:
         -w /app \
         ghcr.io/leoborai/dkc:latest
 
-# Runs the dev server with env vars from .env
-dev:
-    npm run dev
+# Dev build (unoptimized, fast compile) into ./dist
+build:
+    cargo run -p site
 
-# Perform formatting and linting
+# Release build (optimized) into ./dist
+release:
+    cargo run --release -p site
+
+# Dev mode: dev build, then serve ./dist at http://localhost:8080
+dev: build
+    python3 -m http.server 8080 --directory dist
+
+# Release build, then serve ./dist at http://localhost:8080
+serve: release
+    python3 -m http.server 8080 --directory dist
+
+# Formats Rust code
 fmt:
-    npm run format
-
-# Reruns the index binaries
-reindex:
-    cargo r -- notes
-    cargo r -- skills
+    cargo fmt --all
