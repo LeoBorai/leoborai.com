@@ -3,7 +3,7 @@
 		{
 			name: 'Rust',
 			since: 2021,
-			logo: '/img/techstack/rust.png',
+			logo: '/img/techstack/rust.svg',
 			bgColor: '#fff',
 			note: 'HTTP Servers, CLIs, Front-End Development with Leptos and contributions.',
 			isFullStack: true
@@ -11,7 +11,7 @@
 		{
 			name: 'Python',
 			since: 2020,
-			logo: '/img/techstack/python.png',
+			logo: '/img/techstack/python.svg',
 			bgColor: '#fff',
 			note: 'Django and Scripting Experience. Also on HuggingFace courses.',
 			isFullStack: true
@@ -19,7 +19,7 @@
 		{
 			name: 'SQL',
 			since: 2019,
-			logo: '/img/techstack/sql.png',
+			logo: '/img/techstack/postgresql.svg',
 			bgColor: '#eee',
 			note: 'Used SQL on databases like PostgreSQL and SQLite. With libraries like SQLx, SeaORM, TypeORM and Knex.js.',
 			isFullStack: true
@@ -27,7 +27,7 @@
 		{
 			name: 'TypeScript',
 			since: 2017,
-			logo: '/img/techstack/typescript.png',
+			logo: '/img/techstack/typescript.svg',
 			bgColor: '#3178c6',
 			note: 'HTTP Servers and Web Applications with React, Next.js, and SvelteKit.',
 			isFullStack: true
@@ -35,7 +35,7 @@
 	];
 </script>
 
-<div class="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+<div class=" border border-zinc-100 p-6 dark:border-zinc-700/40">
 	<h2 class="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -59,20 +59,13 @@
 		{#each TECHNOLOGIES as tech (tech.name)}
 			<li class="flex gap-4">
 				<div
-					class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0"
-					style="background-color:{tech.bgColor}"
+					class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center bg-white text-zinc-700 shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:text-zinc-200 dark:ring-0"
 				>
-					<img
-						alt=""
-						loading="lazy"
-						width="32"
-						height="32"
-						decoding="async"
-						data-nimg="1"
-						class="h-7 w-7"
-						style="background-color:{tech.bgColor}"
-						src={tech.logo}
-					/>
+					<span
+						class="block h-6 w-6 bg-current"
+						style="mask:url({tech.logo}) center/contain no-repeat;-webkit-mask:url({tech.logo}) center/contain no-repeat"
+						aria-hidden="true"
+					></span>
 				</div>
 				<dl class="flex flex-auto flex-wrap space-y-2 gap-x-2">
 					<dt class="sr-only">{tech.name}</dt>

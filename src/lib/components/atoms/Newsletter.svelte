@@ -1,4 +1,4 @@
-<form class="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40" action="/thank-you">
+<form class=" border border-zinc-100 p-6 dark:border-zinc-700/40" action="/thank-you">
 	<h2 class="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
 		<svg
 			viewBox="0 0 24 24"
@@ -28,10 +28,10 @@
 					placeholder="Email address"
 					aria-label="Email address"
 					required
-					class="w-full appearance-none rounded-[calc(var(--radius-md)-1px)] bg-white px-3 py-[calc(--spacing(2)-1px)] shadow-md shadow-zinc-800/5 outline outline-zinc-900/10 placeholder:text-zinc-400 focus:ring-4 focus:ring-emerald-500/10 focus:outline-emerald-500 sm:text-sm dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:outline-zinc-700 dark:placeholder:text-zinc-500 dark:focus:ring-emerald-400/10 dark:focus:outline-emerald-400"
+					class="focus:ring-accent/10 focus:outline-accent dark:focus:ring-accent/10 dark:focus:outline-accent w-full appearance-none bg-white px-3 py-[calc(--spacing(2)-1px)] shadow-md shadow-zinc-800/5 outline outline-zinc-900/10 placeholder:text-zinc-400 focus:ring-4 sm:text-sm dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:outline-zinc-700 dark:placeholder:text-zinc-500"
 				/></span
 			><button
-				class="ml-4 inline-flex flex-none items-center justify-center gap-2 rounded-md bg-zinc-800 px-3 py-2 text-sm font-semibold text-zinc-100 outline-offset-2 transition hover:bg-zinc-700 active:bg-zinc-800 active:text-zinc-100/70 active:transition-none dark:bg-zinc-700 dark:hover:bg-zinc-600 dark:active:bg-zinc-700 dark:active:text-zinc-100/70"
+				class="ml-4 inline-flex flex-none items-center justify-center gap-2 bg-zinc-800 px-3 py-2 text-sm font-semibold text-zinc-100 outline-offset-2 transition hover:bg-zinc-700 active:bg-zinc-800 active:text-zinc-100/70 active:transition-none dark:bg-zinc-700 dark:hover:bg-zinc-600 dark:active:bg-zinc-700 dark:active:text-zinc-100/70"
 				type="submit">Request</button
 			>
 		</div>

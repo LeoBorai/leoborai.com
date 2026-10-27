@@ -1,7 +1,8 @@
 <script lang="ts">
 	import Footer from '#lib/components/atoms/Footer.svelte';
-	import Navigation from '#lib/components/atoms/Navigation.svelte';
-	import ThemeToggle from '#lib/components/atoms/ThemeToggle.svelte';
+	import Header from '#lib/components/atoms/Header.svelte';
+	import PixelField from '#lib/components/atoms/PixelField.svelte';
+	import RailGlow from '#lib/components/atoms/RailGlow.svelte';
 	import uiStore from '#lib/stores/uiStore.ts';
 
 	import '../app.css';
@@ -42,49 +43,27 @@
 	<link rel="icon" href="/favicon.ico" type="image/x-icon" />
 </svelte:head>
 
-<div class="flex w-full">
-	<div class="fixed inset-0 flex justify-center sm:px-8">
-		<div class="flex w-full max-w-7xl lg:px-8">
-			<div
-				class="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20"
-			></div>
-		</div>
-	</div>
-	<div class="relative flex w-full flex-col">
-		<header
-			class="pointer-events-none relative z-50 flex flex-none flex-col"
-			style="height:var(--header-height);margin-bottom:var(--header-mb)"
-		>
-			<div class="order-last mt-[calc(--spacing(16)-(--spacing(3)))]"></div>
-			<div class="top-0 z-10 h-16 pt-6" style="position:var(--header-position)">
-				<div
-					class="top-(--header-top,--spacing(6)) w-full sm:px-8"
-					style="position:var(--header-inner-position)"
-				>
-					<div class="mx-auto w-full max-w-7xl lg:px-8">
-						<div class="relative px-4 sm:px-8 lg:px-12">
-							<div class="mx-auto max-w-2xl lg:max-w-5xl">
-								<div class="relative flex gap-4">
-									<div class="flex flex-1"></div>
-									<div class="flex flex-1 justify-end md:justify-center">
-										<Navigation />
-									</div>
-									<div class="flex justify-end md:flex-1">
-										<div class="pointer-events-auto">
-											<ThemeToggle />
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
-		<div class="flex-none" style="height:var(--content-offset)"></div>
-		<main class="flex-auto">
-			{@render children()}
-		</main>
-		<Footer />
-	</div>
+<div class="dotted-background fixed inset-0 -z-10" aria-hidden="true"></div>
+<div
+	class="pointer-events-none fixed inset-0 z-0 hidden [mask-image:linear-gradient(#000,transparent_min(95vh,900px))] xl:block"
+	aria-hidden="true"
+>
+	<div
+		class="absolute inset-y-0 left-0 w-[calc(50%-40rem+1px)] border-r border-neutral-200 dark:border-neutral-800"
+	></div>
+	<div
+		class="absolute inset-y-0 right-0 w-[calc(50%-40rem+1px)] border-l border-neutral-200 dark:border-neutral-800"
+	></div>
+</div>
+
+<PixelField />
+
+<RailGlow />
+
+<div class="relative min-h-screen text-neutral-900 dark:text-neutral-100">
+	<Header />
+	<main class="relative z-10 pt-20">
+		{@render children()}
+	</main>
+	<Footer />
 </div>

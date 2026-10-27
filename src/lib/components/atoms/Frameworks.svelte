@@ -3,7 +3,7 @@
 		{
 			name: 'Svelte/Kit',
 			since: 2021,
-			logo: '/img/techstack/sveltekit.png',
+			logo: '/img/techstack/svelte.svg',
 			bgColor: '#FFFFFF',
 			note: 'Web Applications with SveletKit running on Cloudflare Workers',
 			isFullStack: true
@@ -11,7 +11,7 @@
 		{
 			name: 'NextJS',
 			since: 2019,
-			logo: '/img/techstack/next.png',
+			logo: '/img/techstack/nextdotjs.svg',
 			bgColor: '#FFFFFF',
 			note: 'Full-Stack Web Applications with NextJS (ReactJS SSR/SSG Framework)',
 			isFullStack: true
@@ -19,7 +19,7 @@
 		{
 			name: 'EmberJS',
 			since: 2018,
-			logo: '/img/techstack/emberjs.png',
+			logo: '/img/techstack/emberdotjs.svg',
 			bgColor: '#FFFFFF',
 			note: 'Develop Web Applications with EmbjerJS using Ember Data and Ember CLI',
 			isFullStack: true
@@ -27,7 +27,7 @@
 		{
 			name: 'ReactJS',
 			since: 2017,
-			logo: '/img/techstack/reactjs.webp',
+			logo: '/img/techstack/react.svg',
 			bgColor: '#222222',
 			note: 'Worked on building Web Applications with React as Single Page App and also Full-Stack with NextJS',
 			isFullStack: true
@@ -35,7 +35,7 @@
 	];
 </script>
 
-<div class="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+<div class=" border border-zinc-100 p-6 dark:border-zinc-700/40">
 	<h2 class="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -59,20 +59,13 @@
 		{#each FRAMEWORKS as tech (tech.name)}
 			<li class="flex gap-4">
 				<div
-					class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0"
-					style="background-color:{tech.bgColor}"
+					class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center bg-white text-zinc-700 shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:text-zinc-200 dark:ring-0"
 				>
-					<img
-						alt=""
-						loading="lazy"
-						width="32"
-						height="32"
-						decoding="async"
-						data-nimg="1"
-						class="h-7 w-7"
-						style="background-color:{tech.bgColor}"
-						src={tech.logo}
-					/>
+					<span
+						class="block h-6 w-6 bg-current"
+						style="mask:url({tech.logo}) center/contain no-repeat;-webkit-mask:url({tech.logo}) center/contain no-repeat"
+						aria-hidden="true"
+					></span>
 				</div>
 				<dl class="flex flex-auto flex-wrap space-y-2 gap-x-2">
 					<dt class="sr-only">{tech.name}</dt>

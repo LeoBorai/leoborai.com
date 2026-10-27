@@ -15,10 +15,10 @@
 <article class="group relative flex flex-col items-start">
 	<h2 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
 		<div
-			class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"
+			class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 dark:bg-zinc-800/50"
 		></div>
 		<a href="/notes/{slug}"
-			><span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span><span
+			><span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6"></span><span
 				class="relative z-10">{title}</span
 			></a
 		>
@@ -27,7 +27,7 @@
 		class="relative z-10 order-first mb-3 flex items-center pl-3.5 text-sm text-zinc-400 dark:text-zinc-500"
 		datetime={date}
 		><span class="absolute inset-y-0 left-0 flex items-center" aria-hidden="true"
-			><span class="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span></span
+			><span class="h-4 w-0.5 bg-zinc-200 dark:bg-zinc-500"></span></span
 		>{date}</time
 	>
 	<p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
@@ -35,7 +35,7 @@
 	</p>
 	<div
 		aria-hidden="true"
-		class="relative z-10 mt-4 flex items-center text-sm font-medium text-emerald-500"
+		class="text-accent relative z-10 mt-4 flex items-center text-sm font-medium"
 	>
 		Read note<svg
 			viewBox="0 0 16 16"

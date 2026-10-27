@@ -2,44 +2,44 @@
 	const TOOLS = [
 		{
 			name: 'Claude',
-			logo: '/img/techstack/claude.png',
+			logo: '/img/techstack/claude.svg',
 			bgColor: '#FFFFFF',
 			note: 'Claude Code CLI for code generation on a "human-in-the-loop" basis.'
 		},
 		{
 			name: 'GCP',
-			logo: '/img/techstack/gcp.png',
+			logo: '/img/techstack/googlecloud.svg',
 			bgColor: '#fff',
 			note: 'Hosting SQL Databases and Cloud Run Applications.'
 		},
 		{
 			name: 'Fly.io',
-			logo: '/img/techstack/flyio.png',
+			logo: '/img/techstack/flydotio.svg',
 			bgColor: '#fff',
 			note: 'Hosting applications and databases, including PostgreSQL intances and Rust Apps.'
 		},
 		{
 			name: 'Cloudflare',
-			logo: '/img/techstack/cloudflare.png',
+			logo: '/img/techstack/cloudflare.svg',
 			bgColor: '#fff',
 			note: 'Setup Cloudflare Pages and Workers instances using "workers-rs" and Frontend frameworks.'
 		},
 		{
 			name: 'Docker',
-			logo: '/img/techstack/docker.png',
+			logo: '/img/techstack/docker.svg',
 			bgColor: '#fff',
 			note: 'Containerization for development and deployment, including Docker Compose.'
 		},
 		{
 			name: 'Git',
-			logo: '/img/techstack/git.png',
+			logo: '/img/techstack/git.svg',
 			bgColor: '#FFFFFF',
 			note: 'Preferred VCS, used on both personal and professional projects.'
 		}
 	];
 </script>
 
-<div class="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+<div class=" border border-zinc-100 p-6 dark:border-zinc-700/40">
 	<h2 class="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -63,20 +63,13 @@
 		{#each TOOLS as tech (tech.name)}
 			<li class="flex gap-4">
 				<div
-					class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0"
-					style="background-color:{tech.bgColor}"
+					class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center bg-white text-zinc-700 shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:text-zinc-200 dark:ring-0"
 				>
-					<img
-						alt=""
-						loading="lazy"
-						width="32"
-						height="32"
-						decoding="async"
-						data-nimg="1"
-						class="h-7 w-7"
-						style="background-color:{tech.bgColor}"
-						src={tech.logo}
-					/>
+					<span
+						class="block h-6 w-6 bg-current"
+						style="mask:url({tech.logo}) center/contain no-repeat;-webkit-mask:url({tech.logo}) center/contain no-repeat"
+						aria-hidden="true"
+					></span>
 				</div>
 				<dl class="flex flex-auto flex-wrap space-y-2 gap-x-2">
 					<dt class="sr-only">{tech.name}</dt>

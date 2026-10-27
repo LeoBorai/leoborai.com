@@ -2,12 +2,12 @@
 	import Hero from '#lib/components/atoms/Hero.svelte';
 
 	const PROJECTS = [
-	    {
+		{
 			name: 'SealPDF',
 			url: new URL('https://github.com/LeoBorai/SealPDF'),
 			description: 'PDF Digital Signature Tool written in Rust with native Swift UI GUI',
 			image: '/img/projects/sealpdf.png',
-			bgColor: '#fff',
+			bgColor: '#fff'
 		},
 		{
 			name: 'Rust HTTP Server',
@@ -90,7 +90,7 @@
 								{#each PROJECTS as project (project.name)}
 									<li class="group relative flex flex-col items-start">
 										<div
-											class="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0"
+											class="relative z-10 flex h-12 w-12 items-center justify-center bg-white shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0"
 											style="background-color:{project.bgColor}"
 										>
 											<img
@@ -107,11 +107,10 @@
 										</div>
 										<h2 class="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
 											<div
-												class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"
+												class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 dark:bg-zinc-800/50"
 											></div>
 											<a href={project.url.toString()} target="_blank" rel="noopener noreferrer"
-												><span
-													class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"
+												><span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6"
 												></span><span class="relative z-10">{project.name}</span></a
 											>
 										</h2>

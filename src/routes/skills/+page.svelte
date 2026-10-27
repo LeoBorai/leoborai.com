@@ -24,11 +24,10 @@
 											class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100"
 										>
 											<div
-												class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"
+												class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 dark:bg-zinc-800/50"
 											></div>
 											<a href="/skills/{skill.slug}"
-												><span
-													class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"
+												><span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6"
 												></span><span class="relative z-10">{skill.meta.name}</span></a
 											>
 										</h2>
@@ -37,7 +36,7 @@
 										</p>
 										<div
 											aria-hidden="true"
-											class="relative z-10 mt-4 flex items-center text-sm font-medium text-emerald-500"
+											class="text-accent relative z-10 mt-4 flex items-center text-sm font-medium"
 										>
 											Read skill<svg
 												viewBox="0 0 16 16"
