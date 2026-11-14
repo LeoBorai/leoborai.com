@@ -1,0 +1,65 @@
+[
+ {
+  "name": "cargo-binstall",
+  "url": "https://github.com/cargo-bins/cargo-binstall",
+  "description": "A `cargo` plugin used to install Rust binaries from GitHub Releases. Saves time and thus money on CI/CD.",
+  "image": "/img/uses/cargo-binstall.png",
+  "bgColor": "#f0f0f0"
+ },
+ {
+  "name": "cargo-expand",
+  "url": "https://github.com/dtolnay/cargo-expand",
+  "description": "A `cargo` plugin that shows the result of macro expansion.",
+  "image": "/img/uses/dtolnay.png",
+  "bgColor": "#fff"
+ },
+ {
+  "name": "grpcurl",
+  "url": "https://github.com/fullstorydev/grpcurl",
+  "description": "A command-line tool that lets you interact with gRPC servers. Like curl for gRPC.",
+  "image": "/img/uses/grpcurl.jpeg",
+  "bgColor": "#135050"
+ },
+ {
+  "name": "k9s",
+  "url": "https://k9scli.io/",
+  "description": "Similar to `lazy*` tools but for K8s.",
+  "image": "/img/uses/k9s.png",
+  "bgColor": "#fff"
+ },
+ {
+  "name": "kubectx",
+  "url": "https://kubectx.org/",
+  "description": "Tool that helps switching between multiple Kubernetes contexts and clusters quickly",
+  "image": "/img/uses/kubectx.png",
+  "bgColor": "#fff"
+ },
+ {
+  "name": "lazydocker",
+  "url": "https://github.com/jesseduffield/lazydocker",
+  "description": "TUI for managing Docker containers and resources.",
+  "image": "/img/uses/lazydocker.png",
+  "bgColor": "#fff"
+ },
+ {
+  "name": "lazygit",
+  "url": "https://github.com/jesseduffield/lazygit",
+  "description": "TUI for Git.",
+  "image": "/img/uses/lazygit.png",
+  "bgColor": "#fff"
+ },
+ {
+  "name": "ohmyzsh",
+  "url": "https://ohmyz.sh/",
+  "description": "Steroids for zsh.",
+  "image": "/img/uses/ohmyzsh.png",
+  "bgColor": "#fff"
+ },
+ {
+  "name": "minikube",
+  "url": "https://minikube.sigs.k8s.io/docs/",
+  "description": "Setup a local Kubernetes cluster on your machine as a Docker container.",
+  "image": "/img/uses/minikube.png",
+  "bgColor": "#fff"
+ }
+]

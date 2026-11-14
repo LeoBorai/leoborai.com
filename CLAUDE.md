@@ -4,84 +4,40 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-Leo Borai's personal website/blog: a SvelteKit 3 (Svelte 5) app deployed to Cloudflare Pages, plus a small Rust workspace whose CLI generates the static blog-post index consumed by the frontend at runtime. The two halves (`src/`, `crates/`) are coupled only through the generated `static/notes/index.json` file — there is no shared build step that wires them together automatically.
+Leo Borai's personal website/blog: a static site written in Rust with Dioxus (`dioxus-ssr`) and generated at build time into `dist/`, then deployed to Cloudflare Pages. No Node.js, npm or `dx` CLI is needed anywhere.
 
 ## Commands
 
-Package manager is **npm** (see `package-lock.json`, CI uses `npm ci`). Node >=22.17 is required (`engines`). `.npmrc` sets `engine-strict=true`.
-
 ```bash
-npm run dev          # start dev server
-npm run build        # production build (adapter-cloudflare -> .svelte-kit/cloudflare)
-npm run preview      # preview the production build
-npm run check        # svelte-kit sync + svelte-check (type checking)
-npm run check:watch  # same, watch mode
-npm run lint         # prettier --check . && eslint .
-npm run format       # prettier --write .  (also `just fmt`)
+cargo run --release            # generate the site into ./dist
+cargo run --release -- --out X # generate into ./X
+just serve                             # build + serve ./dist on :8080
+cargo fmt --all
 ```
 
-Rust workspace (default member `crates/cli`):
-
-```bash
-cargo build
-cargo run -p cli -- notes   # regenerate static/notes/index.json from src/notes/*.svx
-```
-
-There is no test suite in either half of the repo (no `#[test]` in the Rust crates, no `*.test.*` files on the frontend).
-
-`Justfile`:
-
-- `just dkc` — pulls and runs `ghcr.io/leoborai/dkc:latest`, mounting the repo at `/app` (dev container).
-- `just dev` — runs `npm run dev` with env vars loaded from `.env` (`set dotenv-load`).
-- `just fmt` — runs `npm run format`.
+There is no test suite. `TAILWINDCSS_BIN=/path/to/tailwindcss` makes `build.rs` use a local Tailwind binary instead of downloading one.
 
 ## Architecture
 
-### SvelteKit 3 specifics
+- Single crate `site` (no workspace); the generator binary.
+  - `build.rs` (repo root) downloads the pinned, sha256-verified Tailwind standalone binary (bundles the forms + typography plugins), compiles `assets/app.css` (scans `src/` and `assets/site.js` for classes) to `$OUT_DIR/app.css`, which `main.rs` embeds.
+  - `src/components/{atoms,molecules,organisms}` – atomic Dioxus components; `src/pages/` – one file per page, `Root` (in `pages/mod.rs`) renders chrome + one `Page` variant. Rendered with `dioxus_ssr::render` (pure SSG, no WASM/hydration).
+  - `src/markdown.rs` – `pulldown-cmark` + `syntect`/`two-face` highlighting. Code blocks emit `<pre class="shiki">` with `--shiki-light/--shiki-dark` vars that `assets/app.css` switches on `.dark`.
+  - `src/content.rs` – loads `content/notes/*.md` (drops `published: false`, newest first) and `content/skills/*.md`.
+  - `src/data.rs` + `assets/{social,projects,uses}.json` – static site data.
+  - `assets/site.js` – the only client JS (theme toggle, mobile menu, Berlin clock, copy-as-MD, canvas effects). Inlined theme bootstrap lives in `main.rs` (`THEME_SCRIPT`).
+- `src/notes.rs`, `src/skills.rs` – front matter types/parsers (`parse_with_body`). `NoteMetadata` fields: title, description, icon, date, preview_image_url, published, categories.
+- `content/` – Markdown sources. Adding a note = adding a file; there is no index to regenerate.
+- `static/` – copied verbatim into `dist/` (fonts, images, favicons, note images).
 
-- No `svelte.config.js`: Svelte/Kit config (preprocessors, extensions, adapter) is passed to `sveltekit(...)` in `vite.config.ts`, flat (no `kit` namespace).
-- `$lib` is replaced by `#lib` (package.json `imports`); TS imports need explicit extensions (`#lib/stores/uiStore.ts`).
-- Private env vars are declared in `src/env.ts` (`defineEnvVars`) and imported from `$app/env/private`.
-- `tsconfig.json` extends `$app/tsconfig`; use `$app/state` instead of `$app/stores`.
-- `overrides` pins `postcss-selector-parser` to fix an `npm audit` finding from `@tailwindcss/typography`; drop it once upstream updates.
+Output is `dist/<route>/index.html` (+ `404.html`, `_headers` for cache rules, `assets/*.{hash}.{css,js}`).
 
-### Notes/blog pipeline
-
-Blog posts are `.svx` (Markdown + Svelte, via mdsvex) files in `src/notes/`, each with YAML front matter parsed by the `notes` crate (`crates/notes/src/lib.rs`) into `NoteMetadata { title, description, icon, date, preview_image_url, published, categories }`.
-
-`cargo run -p cli -- notes` (implemented in `crates/cli/src/notes_index.rs`) reads every file in `src/notes/`, drops unpublished entries, sorts by date descending, and writes the result as `static/notes/index.json`. This index is a **build artifact that must be regenerated manually** whenever notes are added, edited, or (un)published — the SvelteKit build does not do this itself.
-
-At runtime, `src/routes/+page.server.ts` and `src/routes/notes/+page.server.ts` fetch `/notes/index.json` (the static file above) and sort/slice it for display. `src/routes/notes/[slug]/+page.ts` dynamically imports the matching `../../../notes/{slug}.svx` module directly (not via the index) to render a single post, throwing a 404 if the import fails.
-
-The `Domain.Note` type in `src/app.d.ts` is a hand-maintained mirror of the Rust `RichNoteMetadata`/`NoteMetadata` structs — keep both in sync manually when the note schema changes (there is no shared codegen between the Rust and TypeScript sides).
-
-### Theme/config
-
-Theme preference flows through a `config` cookie, not localStorage:
-
-- `src/routes/+layout.server.ts` reads the `config` cookie, falling back to the `sec-ch-prefers-color-scheme` request header.
-- `src/lib/stores/uiStore.ts` (`createUIStore`) applies the `dark` class to `document.documentElement` and persists changes via `saveConfig` (`src/lib/utils/config.ts`), which `PATCH`es `src/routes/api/v0/config/+server.ts` to update the cookie.
-
-### Resume request endpoint
-
-`src/routes/api/v0/resume/+server.ts` POSTs a Telegram message (via the Telegram Bot API) whenever a resume is requested, using `TELEGRAM_BOT`/`TELEGRAM_CHAT` env vars (`$app/env/private`, declared in `src/env.ts`). These plus `GH_API_TOKEN` and `VERSION` are injected at build/deploy time in CI, not read from a local `.env` for production builds.
-
-### Components
-
-`src/lib/components/atoms/` holds all Svelte components (flat, no further atomic-design tiers despite the folder name). `src/routes/+layout.svelte` composes `Navigation`, `ThemeToggle`, and `Footer` around `{@render children()}`.
+Theme is stored in `localStorage` (`theme`), falling back to `prefers-color-scheme`.
 
 ## Deployment
 
-Two GitHub Actions workflows (`.github/workflows/`), both: `npm ci` → `npm run build` → `wrangler pages deploy ./.svelte-kit/cloudflare` via `cloudflare/wrangler-action`.
-
-- `deploy-staging.yml`: triggers on push to `main`, deploys to the staging Cloudflare Pages project, `NODE_ENV=development`.
-- `deploy.yml`: triggers on `v*` tags, deploys to the production Cloudflare Pages project, `NODE_ENV=production`.
-
-- `audit.yml`: runs `npm audit --audit-level=moderate` and `npm audit signatures` on pull requests, pushes to `main`, and weekly (Mondays 06:00 UTC).
-
-Neither deploy workflow runs the Rust CLI — the notes index committed to `static/notes/index.json` must already be up to date before tagging/pushing.
+`.github/workflows/`: `deploy-staging.yml` (push to `main`) and `deploy.yml` (`v*` tags) run `cargo run --release -- --out dist` then `wrangler pages deploy ./dist` via `cloudflare/wrangler-action`. `audit.yml` runs `cargo audit` on PRs, pushes to `main` and weekly.
 
 ## Style
 
-- Formatting is enforced by Prettier (`useTabs`, single quotes, no trailing commas, 100 print width) with `prettier-plugin-svelte` and `prettier-plugin-tailwindcss` — run `npm run format` rather than hand-formatting.
-- TypeScript strict mode is on; ESLint extends `typescript-eslint` recommended + `eslint-plugin-svelte` recommended, with Prettier conflict rules disabled.
+Rust 2024, `cargo fmt`. Tailwind utility classes live inline in the components.

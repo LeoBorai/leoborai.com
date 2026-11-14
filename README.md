@@ -1,38 +1,18 @@
-# sv
+# leoborai.com
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
+Personal website and blog. A static site written in Rust with [Dioxus](https://dioxuslabs.com) (`dioxus-ssr`),
+generated at build time and deployed to Cloudflare Pages. No Node.js, npm or `dx` CLI required.
 
 ```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
+cargo run --release          # writes the site to ./dist
+cargo run --release -- --out public
+just serve                           # build + serve ./dist on :8080
 ```
 
-## Developing
+- `content/notes/*.md` – blog posts (YAML front matter + Markdown)
+- `content/skills/*.md` – AI agent skills
+- `static/` – copied verbatim into the output (fonts, images, favicons)
+- `src/` – the generator (Dioxus components, Markdown rendering, syntax highlighting, front matter parsing)
+- `build.rs` – downloads the pinned Tailwind CSS standalone binary and compiles `assets/app.css`
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+Adding a note is just dropping a new `.md` file in `content/notes/`; there is no index to regenerate.

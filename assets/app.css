@@ -1,0 +1,115 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+/* class names live in the Rust components and the client script */
+@source "../src";
+@source "./site.js";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ibm-plex-sans - latin */
+@font-face {
+	font-display: swap;
+	font-family: 'IBM Plex Sans';
+	font-style: normal;
+	font-weight: 200;
+	src: url('/fonts/ibm-plex-sans-v23-latin-200.woff2') format('woff2');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'IBM Plex Sans';
+	font-style: normal;
+	font-weight: 400;
+	src: url('/fonts/ibm-plex-sans-v23-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'IBM Plex Sans';
+	font-style: normal;
+	font-weight: 600;
+	src: url('/fonts/ibm-plex-sans-v23-latin-600.woff2') format('woff2');
+}
+
+/* jetbrains-mono - latin */
+@font-face {
+	font-display: swap;
+	font-family: 'JetBrains Mono';
+	font-style: normal;
+	font-weight: 400;
+	src: url('/fonts/jetbrains-mono-v24-latin-regular.woff2') format('woff2');
+}
+
+@theme {
+	--font-display: 'IBM Plex Sans', sans-serif;
+	--font-sans: 'IBM Plex Sans', sans-serif;
+	--font-mono: 'JetBrains Mono', ui-monospace, monospace;
+	--color-accent: #9d6fd4;
+}
+
+.dotted-background {
+	background-color: #f0eeeb;
+	background-image: radial-gradient(rgb(0 0 0 / 0.08) 1px, transparent 1px);
+	background-size: 20px 20px;
+}
+
+.dark .dotted-background {
+	background-color: #121212;
+	background-image: radial-gradient(rgb(255 255 255 / 0.06) 1px, transparent 1px);
+}
+
+.grid-background {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' fill='none' stroke='black' stroke-opacity='0.06' stroke-width='1'%3E%3Cpath d='M0 .5H56M0 28.5H56M.5 0V56M28.5 0V56M0 0 28 28M56 0 28 28M28 28 0 56M28 28 56 56'/%3E%3C/svg%3E");
+	background-size: 56px 56px;
+}
+
+.dark .grid-background {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' fill='none' stroke='white' stroke-opacity='0.05' stroke-width='1'%3E%3Cpath d='M0 .5H56M0 28.5H56M.5 0V56M28.5 0V56M0 0 28 28M56 0 28 28M28 28 0 56M28 28 56 56'/%3E%3C/svg%3E");
+}
+
+/* base layer so utilities like `font-mono` can override these */
+@layer base {
+	h1 {
+		@apply font-display font-semibold;
+	}
+
+	h2 {
+		@apply font-display font-normal;
+	}
+
+	p,
+	span,
+	li,
+	a,
+	button,
+	input,
+	textarea {
+		@apply font-sans;
+	}
+}
+
+/* shiki code blocks in notes (dual theme via CSS variables) */
+.prose pre.shiki {
+	@apply border border-neutral-200 bg-neutral-50 text-sm dark:border-neutral-800 dark:bg-neutral-900;
+	border-radius: 0;
+}
+
+.prose pre.shiki span {
+	color: var(--shiki-light);
+}
+
+.dark .prose pre.shiki span {
+	color: var(--shiki-dark);
+}
+
+.prose pre,
+.prose pre code,
+.prose :where(code):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
+	font-family: var(--font-mono);
+}
+
+.prose pre span {
+	font-family: inherit;
+}
