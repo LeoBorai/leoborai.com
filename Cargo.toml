@@ -19,5 +19,5 @@ two-face = { version = "0.5", default-features = false, features = ["syntect-fan
 serde_yaml_ng = "0.10"
 
 [build-dependencies]
-sha2 = "0.10"
+sha2 = "0.11"
 ureq = "3"
