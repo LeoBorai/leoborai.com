@@ -789,17 +789,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "notes"
-version = "0.1.0"
-dependencies = [
- "chrono",
- "serde",
- "serde_json",
- "thiserror 1.0.69",
- "yaml-front-matter",
-]
-
-[[package]]
 name = "num-conv"
 version = "0.2.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1157,24 +1146,14 @@ dependencies = [
  "chrono",
  "dioxus",
  "dioxus-ssr",
- "notes",
  "pulldown-cmark",
  "serde",
  "serde_json",
  "sha2",
- "skills",
  "syntect",
+ "thiserror 1.0.69",
  "two-face",
  "ureq",
-]
-
-[[package]]
-name = "skills"
-version = "0.1.0"
-dependencies = [
- "serde",
- "serde_json",
- "thiserror 1.0.69",
  "yaml-front-matter",
 ]
 

@@ -21,7 +21,7 @@ jobs:
         uses: Swatinem/rust-cache@v2
 
       - name: Build
-        run: cargo run --release -p site -- --out dist
+        run: cargo run --release --locked -- --out dist
 
       - name: Deploy
         uses: cloudflare/wrangler-action@v3

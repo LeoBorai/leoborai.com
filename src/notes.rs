@@ -7,9 +7,6 @@ use serde::{Deserialize, Serialize};
 use thiserror::Error;
 use yaml_front_matter::YamlFrontMatter;
 
-/// The format of the date string in the YAML front matter
-pub const DATE_STR_FORMAT: &str = "%Y-%m-%d";
-
 #[derive(Debug, Error)]
 pub enum Error {
     #[error("Failed to parse YAML front matter. {0}")]

@@ -8,10 +8,13 @@
 //! cargo run --release -- --out public
 //! ```
 
+mod components;
 mod content;
 mod data;
 mod markdown;
-mod ui;
+mod notes;
+mod pages;
+mod skills;
 
 use std::fs;
 use std::hash::{Hash, Hasher};
@@ -21,7 +24,7 @@ use anyhow::{Context, Result};
 use chrono::{Datelike, Utc};
 use dioxus::prelude::*;
 
-use crate::ui::{Page, Root, RootProps};
+use crate::pages::{Page, Root, RootProps};
 
 const APP_CSS: &str = include_str!(concat!(env!("OUT_DIR"), "/app.css"));
 const SITE_JS: &str = include_str!("../assets/site.js");
@@ -144,10 +147,10 @@ fn parse_out_dir(root: &Path) -> PathBuf {
     let mut args = std::env::args().skip(1);
 
     while let Some(arg) = args.next() {
-        if arg == "--out" {
-            if let Some(dir) = args.next() {
-                return root.join(dir);
-            }
+        if arg == "--out"
+            && let Some(dir) = args.next()
+        {
+            return root.join(dir);
         }
     }
 

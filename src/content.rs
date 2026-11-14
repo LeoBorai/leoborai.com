@@ -3,10 +3,10 @@
 use std::fs;
 use std::path::Path;
 
+use crate::notes::NoteMetadata;
+use crate::skills::SkillMetadata;
 use anyhow::{Context, Result};
 use chrono::NaiveDate;
-use notes::NoteMetadata;
-use skills::SkillMetadata;
 
 use crate::markdown::Markdown;
 

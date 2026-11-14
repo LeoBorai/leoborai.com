@@ -12,11 +12,11 @@ dkc:
 
 # Dev build (unoptimized, fast compile) into ./dist
 build:
-    cargo run -p site
+    cargo run
 
 # Release build (optimized) into ./dist
 release:
-    cargo run --release -p site
+    cargo run --release
 
 # Dev mode: dev build, then serve ./dist at http://localhost:8080
 dev: build
