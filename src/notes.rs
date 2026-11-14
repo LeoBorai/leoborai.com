@@ -1,17 +1,7 @@
 //! Notes types and utility functions
 
-use std::str::FromStr;
-
 use chrono::NaiveDate;
 use serde::{Deserialize, Serialize};
-use thiserror::Error;
-use yaml_front_matter::YamlFrontMatter;
-
-#[derive(Debug, Error)]
-pub enum Error {
-    #[error("Failed to parse YAML front matter. {0}")]
-    ParseError(String),
-}
 
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "lowercase")]
@@ -38,24 +28,9 @@ pub struct NoteMetadata {
 }
 
 impl NoteMetadata {
-    /// Parses a note file, returning its metadata and the Markdown body
+    /// Parses a file, returning its metadata and the Markdown body
     /// (everything after the YAML front matter).
-    pub fn parse_with_body(s: &str) -> Result<(Self, String), Error> {
-        let doc = YamlFrontMatter::parse::<NoteMetadata>(s)
-            .map_err(|err| Error::ParseError(err.to_string()))?;
-
-        Ok((doc.metadata, doc.content))
-    }
-}
-
-impl FromStr for NoteMetadata {
-    type Err = Error;
-
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
-        let front_matter = YamlFrontMatter::parse::<NoteMetadata>(s)
-            .map_err(|err| Error::ParseError(err.to_string()))?;
-        let note = front_matter.metadata;
-
-        Ok(note)
+    pub fn parse_with_body(s: &str) -> Result<(Self, String), crate::frontmatter::Error> {
+        crate::frontmatter::parse(s)
     }
 }

@@ -20,11 +20,11 @@ release:
 
 # Dev mode: dev build, then serve ./dist at http://localhost:8080
 dev: build
-    python3 -m http.server 8080 --directory dist
+    cd ./dist && http-server start -p 8080
 
 # Release build, then serve ./dist at http://localhost:8080
 serve: release
-    python3 -m http.server 8080 --directory dist
+    cd ./dist && http-server start -p 8080
 
 # Formats Rust code
 fmt:

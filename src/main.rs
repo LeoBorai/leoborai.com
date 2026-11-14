@@ -11,6 +11,7 @@
 mod components;
 mod content;
 mod data;
+mod frontmatter;
 mod markdown;
 mod notes;
 mod pages;
