@@ -16,7 +16,7 @@ jobs:
     name: cargo deny
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Check advisories, bans, licenses and sources
         uses: EmbarkStudios/cargo-deny-action@v2
