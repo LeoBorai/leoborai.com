@@ -1,4 +1,4 @@
-name: Audit
+name: Deny
 on:
   pull_request:
   push:
@@ -11,14 +11,12 @@ permissions:
   contents: read
 
 jobs:
-  audit:
+  deny:
     runs-on: ubuntu-latest
-    name: cargo audit
+    name: cargo deny
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Audit Vulnerabilities
-        uses: rustsec/audit-check@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Check advisories, bans, licenses and sources
+        uses: EmbarkStudios/cargo-deny-action@v2

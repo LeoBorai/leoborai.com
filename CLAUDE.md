@@ -13,6 +13,7 @@ cargo run --release            # generate the site into ./dist
 cargo run --release -- --out X # generate into ./X
 just serve                             # build + serve ./dist on :8080
 cargo fmt --all
+cargo deny check               # advisories, bans, licenses, sources
 ```
 
 There is no test suite. `TAILWINDCSS_BIN=/path/to/tailwindcss` makes `build.rs` use a local Tailwind binary instead of downloading one.
@@ -36,7 +37,7 @@ Theme is stored in `localStorage` (`theme`), falling back to `prefers-color-sche
 
 ## Deployment
 
-`.github/workflows/`: `deploy-staging.yml` (push to `main`) and `deploy.yml` (`v*` tags) run `cargo run --release -- --out dist` then `wrangler pages deploy ./dist` via `cloudflare/wrangler-action`. `audit.yml` runs `cargo audit` on PRs, pushes to `main` and weekly.
+`.github/workflows/`: `deploy-staging.yml` (push to `main`) and `deploy.yml` (`v*` tags) run `cargo run --release -- --out dist` then `wrangler pages deploy ./dist` via `cloudflare/wrangler-action`. `deny.yml` runs `cargo deny check` (config in `deny.toml`) on PRs, pushes to `main` and weekly.
 
 ## Style
 
