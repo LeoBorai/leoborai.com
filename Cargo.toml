@@ -1,6 +1,6 @@
 [package]
 name = "site"
-version = "0.7.1"
+version = "0.7.2"
 edition = "2024"
 authors = ["Leo Borai <estebanborai@gmail.com>"]
 publish = false
