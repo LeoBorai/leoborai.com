@@ -26,6 +26,7 @@ dev: build
 serve: release
     cd ./dist && http-server start -p 8080
 
-# Formats Rust code
+# Formatting
 fmt:
-    cargo fmt --all
+    cargo clippy --fix --workspace --allow-dirty --allow-staged
+    cargo fmt
