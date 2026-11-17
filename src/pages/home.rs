@@ -34,7 +34,7 @@ pub fn HomePage(notes: Vec<NoteEntry>) -> Element {
             }
         }
         Container {
-            div { class: "grid gap-x-12 lg:grid-cols-2",
+            div {
                 Section { id: "notes".to_string(), label: "Notes", href: "/notes".to_string(), href_label: "View all notes".to_string(),
                     div { class: "divide-y divide-neutral-200 dark:divide-neutral-800",
                         for note in notes {
